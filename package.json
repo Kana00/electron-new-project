@@ -2,14 +2,15 @@
   "name": "electron-new-project",
   "productName": "electron-new-project",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "A boilerplate with electron-forge",
   "main": "src/start.ts",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "tslint --project tsconfig.json --type-check --force"
+    "lint": "tslint --project tsconfig.json --project --force",
+    "test": "jest"
   },
   "keywords": [],
   "author": "kana",
@@ -67,5 +68,16 @@
     "ts-jest": "^22.4.1",
     "tslint": "^5.1.0",
     "typescript": "~2.2.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
   }
 }
