@@ -1,31 +1,31 @@
 import * as React from 'react';
+import ReactDOM from 'react-dom';
 import __ from './i18n/Language';
-// import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
+// URL = /
+const Root = () => (
+  <div>
+    <span>Root component</span>
+    <Link to="/home">Home directory</Link>
+  </div>
+);
+
+// URL = /home
 const Home = () => (
   <div>
-    <h1>Welcome to Home</h1>
-  </div>
-);
-
-const Project = () => (
-  <div>
-    <h1>Welcome to Project</h1>
-  </div>
-);
-
-const Contact = () => (
-  <div>
-    <h1>Welcome to Contact</h1>
+    <h2>Home component</h2>
+    <Link to="/">root directory</Link>
   </div>
 );
 
 export class App extends React.Component<undefined, undefined> {
   render() {
     return (
-        <div>
-          <h2>{__('application.hello')}</h2>
-        </div>
+      <div>
+        <Route path='/' component={Root}/>
+        <Route exact path='/home' component={Home}/>
+      </div>
     );
   }
 }

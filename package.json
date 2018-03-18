@@ -51,14 +51,16 @@
     "@types/electron-devtools-installer": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-router-dom": "^4.2.5",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
     "jest": "^22.4.2",
     "react": "latest",
     "react-dom": "latest",
-    "react-hot-loader": "latest",
+    "react-hot-loader": "^4.0.0",
     "react-i18nify": "^1.11.12",
+    "react-router-dom": "^4.2.2",
     "tslib": "^1.4.0"
   },
   "devDependencies": {

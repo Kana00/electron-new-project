@@ -2,7 +2,7 @@ export default {
   environment: {
     isDevelopment: true,
     isLiveReloading: true,
-    isShowDebugToolsStartUp: false
+    isShowDebugToolsStartUp: true
   },
   window: {
     title: "my new project",

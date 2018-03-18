@@ -12,18 +12,28 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
+import { BrowserRouter as Router, Redirect } from 'react-router-dom';
 
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
 
 
 let render = () => {
   const { App } = require('./app');
-  ReactDOM.render((
+  ReactDOM.render(
     <AppContainer>
+      <Router>
         <App />
-    </AppContainer>), document.getElementById('App'));
+      </Router>
+    </AppContainer>, document.getElementById('App'));
 }
 
 render();
-if (module.hot) { module.hot.accept(render); }
+if (module.hot) {
+  module.hot.accept(render);
+}
 </script>
 </html>
