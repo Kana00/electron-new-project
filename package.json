@@ -48,12 +48,13 @@
     }
   },
   "dependencies": {
-    "@types/electron-devtools-installer": "^2.0.2",
-    "@types/react": "^0.14.55",
-    "@types/react-dom": "^0.14.20",
+    "@types/electron-devtools-installer": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "jest": "^22.4.2",
     "react": "latest",
     "react-dom": "latest",
     "react-hot-loader": "latest",
