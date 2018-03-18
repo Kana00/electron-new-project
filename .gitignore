@@ -1,2 +1,6 @@
+# folder
 node_modules
 out
+
+# files
+package-lock.json
