@@ -54,9 +54,10 @@
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-hot-loader": "^3.0.0-beta.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hot-loader": "latest",
+    "react-i18nify": "^1.11.12",
     "tslib": "^1.4.0"
   },
   "devDependencies": {
