@@ -12,11 +12,7 @@ yarn add global electron-forge
 Finaly, run the boilerplate and enjoy :
 
 ```bash
-<<<<<<< HEAD
 yarn start
-=======
-yarn run
->>>>>>> f323d2a1a4cab244d4c95a47321ebe28b79aad2a
 ```
 
 
