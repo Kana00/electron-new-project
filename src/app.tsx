@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
