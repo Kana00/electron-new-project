@@ -21,3 +21,4 @@ yarn start
 [![React Router](https://github.com/chentsulin/electron-react-boilerplate/blob/master/internals/img/react-router.png?raw=true)](https://github.com/ReactTraining/react-router)
 [![Jest](https://github.com/chentsulin/electron-react-boilerplate/blob/master/internals/img/jest.png?raw=true)](https://facebook.github.io/jest/)
 [![TypeScript](https://yt3.ggpht.com/-Z-HY_2zZwyw/AAAAAAAAAAI/AAAAAAAAAAA/qxqDsrqMTKg/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg)](http://www.typescriptlang.org/)
+[![Less](http://www.emmanuelgeorjon.com/images/2012/05/less_logo.jpg)](http://lesscss.org/)
