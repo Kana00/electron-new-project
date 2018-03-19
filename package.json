@@ -49,8 +49,11 @@
   },
   "dependencies": {
     "@types/electron-devtools-installer": "latest",
+    "@types/jest": "^22.2.0",
+    "@types/node": "^9.4.7",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.5",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
@@ -60,6 +63,7 @@
     "react-dom": "latest",
     "react-hot-loader": "^4.0.0",
     "react-i18nify": "^1.11.12",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "tslib": "^1.4.0"
   },
