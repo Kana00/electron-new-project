@@ -1,5 +1,7 @@
 # Installation
 
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 You must install yarn to have best performance
 [Yarn Download](https://yarnpkg.com/en/docs/install)
 

@@ -23,6 +23,8 @@ const createWindow = async () => {
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
+  mainWindow.setAlwaysOnTop(appconfigrc.environment.isDevelopment);
+
   // Open the DevTools.
   if (appconfigrc.environment.isShowDebugToolsStartUp) {
     await installExtension(REACT_DEVELOPER_TOOLS);
