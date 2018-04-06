@@ -1,18 +1,20 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Redirect, Route } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
 
 
-export class App extends React.Component<undefined, undefined> {
+
+/// <reference path="./interfaces.d.ts" />
+export class App extends React.Component<AppPropsType, any> {
   render() {
     return (
       <div>
-        {/*subscribe all your route here*/}
-        <Route path='/' component={Root}/>
         <Switch>
-          <Route exact path='/home' component={Home}/>
+          {/* subscribe all your route here */}
+          <Route exact={true} path={"/"} component={Root}/>
+          <Route exact={true} path={"/home"} component={Home}/>
           <Route component={NoMatch}/>
         </Switch>
       </div>
