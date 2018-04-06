@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Redirect, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
@@ -11,6 +11,9 @@ export class App extends React.Component<AppPropsType, any> {
   render() {
     return (
       <div>
+        <Link to={"/"}>To URL /</Link><br/>
+        <Link to={"/home"}>To URL /home</Link><br/>
+        <Link to={"/hosdfsdfme"}>No match link /hosdfsdfme</Link>
         <Switch>
           {/* subscribe all your route here */}
           <Route exact={true} path={"/"} component={Root}/>
