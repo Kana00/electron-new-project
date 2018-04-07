@@ -44,8 +44,7 @@ class Home extends React.Component<any> {
   render() {
     return (
       <div>
-        <p>Home component => <Link to="/test">root directory</Link></p>
-        <p>Store content :</p>
+        <p>Home component => <Link to="/">root directory</Link></p>
       </div>
     );
   }

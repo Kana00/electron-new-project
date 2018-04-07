@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
 
-export class App extends React.Component<undefined, undefined> {
+
+
+/// <reference path="./interfaces.d.ts" />
+export class App extends React.Component<AppPropsType, any> {
   render() {
     return (
       <div>
-        {/* subscribe all your route here */}
-        {/* fore selected path, component is rendered */}
-        {/* use <Link to='/myPath/…'>click here</Link> to select your path to render */}
-        <Route path='/' component={Root}/>
+        <Link to={"/"}>To URL /</Link><br/>
+        <Link to={"/home"}>To URL /home</Link><br/>
+        <Link to={"/hosdfsdfme"}>No match link /hosdfsdfme</Link>
         <Switch>
-          <Route exact path='/home' component={Home}/>
+          {/* subscribe all your route here */}
+          <Route exact={true} path={"/"} component={Root}/>
+          <Route exact={true} path={"/home"} component={Home}/>
           <Route component={NoMatch}/>
         </Switch>
       </div>
