@@ -1,7 +1,7 @@
-interface Global {
+interface GlobalType {
   __REDUX_DEVTOOLS_EXTENSION__: any
 }
-declare var global: Global;
+declare var global: GlobalType;
 /* --------------------------- Component --------------------------- */
 
 interface AppPropsType extends React.Props<any> {
