@@ -2,11 +2,12 @@ import * as React from 'react';
 
 const styles = {
   contentContainer: {
-    height: '60vh',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItem: 'start',
+    marginTop: '5rem',
+    marginBottom: '1rem',
   },
   text: {
     fontFamily: 'SourceCodeRoman-ExtraLight',
