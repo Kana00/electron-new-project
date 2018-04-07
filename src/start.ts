@@ -23,7 +23,9 @@ const createWindow = async () => {
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-  mainWindow.setAlwaysOnTop(appconfigrc.environment.isDevelopment);
+  if(appconfigrc.environment.isWindowAlwaysOnTop && appconfigrc.environment.isDevelopment) {
+    mainWindow.setAlwaysOnTop(appconfigrc.environment.isDevelopment);
+  }
 
   // Open the DevTools.
   if (appconfigrc.environment.isShowDebugToolsStartUp) {

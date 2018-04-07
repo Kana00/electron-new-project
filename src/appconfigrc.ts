@@ -2,7 +2,8 @@ export default {
   environment: {
     isDevelopment: true,
     isLiveReloading: true,
-    isShowDebugToolsStartUp: true
+    isShowDebugToolsStartUp: true,
+    isWindowAlwaysOnTop: false,
   },
   window: {
     title: "my new project",
@@ -11,6 +12,6 @@ export default {
     min_width: 800,
     min_height: 600,
     backgroundColor: "#0074D9",
-    iconPath: "./icons/png/64x64.png"
+    iconPath: "./icons/png/64x64.png",
   }
 }
