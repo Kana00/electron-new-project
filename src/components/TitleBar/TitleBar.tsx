@@ -12,6 +12,7 @@ const styles = {
     textAlign: 'center',
   },
   titleOfWindow: {
+    fontFamily: 'Helvetica',
     fontSize: 14,
     color: '#9DA5B4',
   }

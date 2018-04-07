@@ -13,8 +13,8 @@ export default {
     width: 1024,
     min_width: 800,
     min_height: 600,
-    backgroundColor: "#21252B",
-    iconPath: "./icons/png/64x64.png",
+    backgroundColor: "#171B23",
+    // iconPath: "./icons/png/64x64.png",
   }
 }
 // titleBarStyle?: ('default' | 'hidden' | 'hidden-inset' | 'hiddenInset' | 'customButtonsOnHover');

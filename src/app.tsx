@@ -4,6 +4,7 @@ import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
 import TitleBar from './components/TitleBar/TitleBar';
+import DisplayReactElectron from './components/DisplayReactElectron/DisplayReactElectron';
 
 
 /// <reference path="./interfaces.d.ts" />
@@ -12,6 +13,7 @@ export class App extends React.Component<AppPropsType, any> {
     return (
       <div>
         <TitleBar />
+        <DisplayReactElectron />
 
         <Switch>
           {/* subscribe all your route here */}
