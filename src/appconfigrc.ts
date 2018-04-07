@@ -7,11 +7,14 @@ export default {
   },
   window: {
     title: "my new project",
+    frame: false,
+    titleBarStyle: 'hidden',
+    height: 600,
     width: 1024,
-    "heigh": 600,
     min_width: 800,
     min_height: 600,
-    backgroundColor: "#0074D9",
+    backgroundColor: "#F4F4F4",
     iconPath: "./icons/png/64x64.png",
   }
 }
+// titleBarStyle must be = customButtonsOnHover | hiddenInset | hidden
