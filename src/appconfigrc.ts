@@ -6,15 +6,15 @@ export default {
     isWindowAlwaysOnTop: false,
   },
   window: {
-    title: "my new project",
+    title: "My new project",
     frame: false,
     titleBarStyle: 'hidden',
     height: 600,
     width: 1024,
     min_width: 800,
     min_height: 600,
-    backgroundColor: "#F4F4F4",
+    backgroundColor: "#21252B",
     iconPath: "./icons/png/64x64.png",
   }
 }
-// titleBarStyle must be = customButtonsOnHover | hiddenInset | hidden
+// titleBarStyle?: ('default' | 'hidden' | 'hidden-inset' | 'hiddenInset' | 'customButtonsOnHover');
