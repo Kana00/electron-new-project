@@ -1,59 +1,43 @@
 import * as React from 'react';
-import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
 
 // --------------------- Redux how to use it ---------------------
-import store from '../redux/store/store';
+import { connect } from 'react-redux';
 // import actions do you need
-import addMessage from "../redux/action/action";
-import { Component } from 'react';
+import { addMessage, removeMessage } from "../redux/action/messageAction";
 // dispatch one action to the store
-store.dispatch( addMessage('test') );
+// store.dispatch( addMessage('test') );
 // each time store is modified, execute this callback
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 // ---------------------------------------------------------------
 
 
-
-
-
-const mapStateToProps = state => {
-  return { message: 'testtesttest' };
-};
-
-const mapStateToProps = (state) => {
-  return {
-      state: {
-        message: state.message
-      }
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    message : dispatch(addMessage('');
-  }
-}
-
-// URL = /home
+/// <reference path="../interfaces.d.ts" />
 class Home extends React.Component<any> {
   constructor(props: any) {
     super(props);
-    this.state = {store: store.getState()};
   }
+
   render() {
     return (
       <div>
-        <p>Home component => <Link to="/">root directory</Link></p>
+        <h4>Home component</h4>
+        <p>Redux exemple : {this.props.monMessage}</p>
+        <input type="button" value="add message" onClick={() => this.props.showMessage('add button pressed')}/>
+        <input type="button" value="test" onClick={() => this.props.hideMessage()}/>
       </div>
     );
   }
 }
 
-const EstablishmentContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
-
-
-export default EstablishmentContainer;
+// send action and state to the props of component Home
+function mapStateToProps(state: any) {
+  return { monMessage: state.rootScreenReducer.message }
+}
+function mapDispatchToProps(dispatch: any) {
+  return {
+    showMessage: (message: string) => dispatch(addMessage(message)),
+    hideMessage: () => dispatch(removeMessage()),
+  }
+}
+const HomeComponent = connect(mapStateToProps, mapDispatchToProps)(Home);
+export default HomeComponent;

@@ -11,9 +11,9 @@ export class App extends React.Component<AppPropsType, any> {
   render() {
     return (
       <div>
-        <Link to={"/"}>To URL /</Link><br/>
-        <Link to={"/home"}>To URL /home</Link><br/>
-        <Link to={"/hosdfsdfme"}>No match link /hosdfsdfme</Link>
+        <Link to={"/"}>URL : /</Link><br/>
+        <Link to={"/hosdfsdfme"}>URL : /???</Link><br/>
+        <Link to={"/home"}>URL : /home</Link><br/>
         <Switch>
           {/* subscribe all your route here */}
           <Route exact={true} path={"/"} component={Root}/>

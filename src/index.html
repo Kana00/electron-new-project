@@ -21,13 +21,14 @@ import store from "./redux/store/store";
 let render = () => {
   const { App } = require('./app');
   ReactDOM.render(
-    <Provider store={store}>
-      <AppContainer>
+    <AppContainer>
+      <Provider store={store}>
         <Router>
           <App />
         </Router>
-      </AppContainer>
-    </Provider>, document.getElementById('App'));
+      </Provider>
+    </AppContainer>, document.getElementById('App'));
+
 }
 
 render();
