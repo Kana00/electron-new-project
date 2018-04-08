@@ -8,7 +8,7 @@ export default {
   window: {
     title: "My new project",
     frame: false,
-    titleBarStyle: 'hidden',
+    // titleBarStyle: 'hidden',
     height: 600,
     width: 1024,
     min_width: 800,

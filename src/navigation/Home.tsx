@@ -71,7 +71,7 @@ class Home extends React.Component<any, HomeStateType> {
         <div style={styles.homeContainer}>
           <h1 style={styles.title}>Home component</h1>
 
-          <p>Traduction exemple ⤑ {__("application.hello")} ⤎</p>
+          <p>Translation exemple ⤑ {__("application.hello")} ⤎</p>
 
           <p>{this.state.timeNow}</p>
 

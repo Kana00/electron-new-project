@@ -27,7 +27,7 @@ export default class DisplayReactElectron extends React.Component {
         textAlign: 'center',
         color: '#BBBBBB',
         fontSize: 80,
-        fontWeight: 'lighter',
+        marginTop: -40,
       },
     }
     return (

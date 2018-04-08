@@ -2,10 +2,6 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class NavigationBar extends React.Component {
-  constructor(props: any) {
-    super(props);
-  }
-
   render() {
     const heightOfNavBar = 4;
     const styles = {
