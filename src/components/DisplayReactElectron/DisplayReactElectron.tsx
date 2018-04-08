@@ -5,14 +5,15 @@ import Lottie from 'react-lottie';
 const styles = {
   contentContainer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
-    alignItem: 'start',
-    marginTop: '5rem',
+    alignItem: 'center',
+    marginTop: '1rem',
     marginBottom: '1rem',
   },
   text: {
     fontFamily: 'SourceCodeRoman-ExtraLight',
+    textAlign: 'center',
     color: '#BBBBBB',
     fontSize: 80,
     fontWeight: 'lighter',
