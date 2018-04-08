@@ -4451,6 +4451,10 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   dependencies:
     js-tokens "^3.0.0"
 
+lottie-web@^5.1.10, lottie-web@^5.1.3:
+  version "5.1.10"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.1.10.tgz#d360b7cddd792ea4248ecc56d5122a468c86b243"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -5613,6 +5617,13 @@ react-i18nify@^1.11.12:
     intl "^1.2"
     moment "^2.20.1"
     prop-types "^15.6.0"
+
+react-lottie@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-lottie/-/react-lottie-1.1.0.tgz#9d7ddd1d9df8fd0d1323c257b03ee317bbee6a63"
+  dependencies:
+    babel-runtime "^6.26.0"
+    lottie-web "^5.1.3"
 
 react-redux@^5.0.7:
   version "5.0.7"

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Lottie from 'react-lottie';
+
 
 const styles = {
   contentContainer: {
@@ -21,6 +23,17 @@ export default class DisplayReactElectron extends React.Component {
   render() {
     return (
       <div style={styles.contentContainer}>
+        <Lottie
+          options={{
+            loop: false,
+            autoplay: true,
+            animationData: require('../../assets/animations/reactAnimation.json'),
+          }}
+          height={200}
+          width={200}
+          isStopped={false}
+          isPaused={false}
+        />
         <span style={styles.text}>Electron</span>
       </div>
     );
