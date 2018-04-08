@@ -4,8 +4,12 @@ interface GlobalType {
 declare var global: GlobalType;
 /* --------------------------- Component --------------------------- */
 
-interface AppPropsType extends React.Props<any> {
+interface AppPropsType {
 
+}
+
+interface HomeStateType {
+  timeNow: string,
 }
 
 

@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
-import TitleBar from './components/TitleBar/TitleBar';
-import DisplayReactElectron from './components/DisplayReactElectron/DisplayReactElectron';
-
+import TitleBar from './components/TitleBar/TitleBar'
+import NavigationBar from './components/NavigationBar/NavigationBar';
 
 /// <reference path="./interfaces.d.ts" />
 export class App extends React.Component<AppPropsType, any> {
@@ -13,7 +12,6 @@ export class App extends React.Component<AppPropsType, any> {
     return (
       <div>
         <TitleBar />
-        <DisplayReactElectron />
 
         <Switch>
           {/* subscribe all your route here */}
@@ -22,9 +20,7 @@ export class App extends React.Component<AppPropsType, any> {
           <Route component={NoMatch}/>
         </Switch>
 
-        <Link to={"/"}>URL : /</Link><br/>
-        <Link to={"/hosdfsdfme"}>URL : /???</Link><br/>
-        <Link to={"/home"}>URL : /home</Link><br/>
+        <NavigationBar />
       </div>
     );
   }

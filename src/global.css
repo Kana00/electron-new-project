@@ -23,3 +23,29 @@ html body {
   padding: 0;
   font-family: "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
 }
+
+input[type="button"] {
+  -ms-progress-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 2rem;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #0074D9;
+  font-size: 1rem;
+  color: #0074D9;
+  background-color: #272C35;
+  transition: 300ms;
+}
+input[type="button"]:hover {
+  transform: 300ms;
+  background-color: #0079e355;
+  cursor: pointer;
+  transition: none;
+  color: rgb(37, 152, 252);
+}
+input[type="button"]:active {
+  background-color: #006fcf55;
+  transition: none;
+  color: rgb(37, 152, 252);
+}
