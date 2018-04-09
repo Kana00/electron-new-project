@@ -44,6 +44,7 @@ class Home extends React.Component<any, HomeStateType> {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        minWidth: '40em',
         width: '50vw',
         color: '#BBBBBB',
         fontFamily: 'SourceCodeRoman-ExtraLight',

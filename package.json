@@ -59,6 +59,7 @@
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "flexbox-react": "^4.4.0",
     "jest": "^22.4.2",
     "lottie-web": "^5.1.10",
     "moment": "^2.22.0",

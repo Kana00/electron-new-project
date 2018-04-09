@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default class NavigationBar extends React.Component {
   render() {
-    const heightOfNavBar = 4;
+    const heightOfNavBar = 3;
     const styles = {
       navigationContainer: {
         /* Position Handler  */

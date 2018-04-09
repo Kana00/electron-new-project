@@ -14,7 +14,7 @@
   url("./assets/fonts/source-code-pro/SourceCodePro-Regular.otf") format("otf"),
   url("./assets/fonts/source-code-pro/SourceCodePro-Semibold.otf") format("otf"),
   url("./assets/fonts/source-code-pro/SourceCodePro-SemiboldIt.otf") format("otf"),
- }
+}
 
 html body {
   height: 100vh;

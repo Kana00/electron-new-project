@@ -12,6 +12,14 @@ interface HomeStateType {
   timeNow: string,
 }
 
+/**
+ * @param colorOfControl a color in format hexadecimal color
+ * @param height size of height image in pixel
+ */
+interface WindowsWindowControlPropsType {
+  colorOfControl: string,
+  height: string
+}
 
 /* ----------------------------- Redux ----------------------------- */
 interface combinedReducerType {
