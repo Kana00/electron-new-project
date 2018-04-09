@@ -43,7 +43,7 @@ export default class TitleBar extends React.Component {
       );
     } else if (this._operatingSystem === "Linux" || this._operatingSystem === "Windows_NT") {
       this._heightOfTitleBar = '30px';
-      this._paddingInterElement = '20px';
+      this._paddingInterElement = '10px';
       const styles = {
         titleContainer: {
           backgroundColor: '#282C34',
@@ -75,7 +75,7 @@ export default class TitleBar extends React.Component {
             </div>
           </div>
           <div style={styles.controlRight}>
-            <WindowsWindowControl colorOfControl="#BBBBBB" height={this._heightOfTitleBar}/>
+            <WindowsWindowControl colorOfControl="#BBBBBB" onOverColor="#EEEEEE" height={this._heightOfTitleBar}/>
           </div>
         </Flexbox>
       )
