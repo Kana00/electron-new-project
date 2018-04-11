@@ -20,6 +20,9 @@
         "target": "es2015",
         "module": "commonjs",
         "jsx": "react"
+      },
+      "text/less": {
+        "dumpLineNumbers": "comments"
       }
     },
     "production": {

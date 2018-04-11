@@ -5,7 +5,6 @@ import configApp from '../../appconfigrc';
 import './TitleBar';
 import WindowsWindowControl from './WindowsWindowControl/WindowsWindowControl';
 
-
 export default class TitleBar extends React.Component {
   private _operatingSystem: string;
   private _heightOfTitleBar: string;
@@ -13,11 +12,11 @@ export default class TitleBar extends React.Component {
   constructor(props: any) {
     super(props);
     this._operatingSystem = os.type();
-    this._operatingSystem = "Windows_NT";
+    this._operatingSystem = 'Windows_NT';
   }
 
   render() {
-    if(this._operatingSystem === "Darwin") {
+    if (this._operatingSystem === 'Darwin') {
       const styles = {
         titleContainer: {
           backgroundColor: '#282C34',
@@ -35,13 +34,13 @@ export default class TitleBar extends React.Component {
           fontSize: 14,
           color: '#9DA5B4',
         }
-      }
+      };
       return (
         <div style={styles.titleContainer}>
           <span style={styles.titleOfWindow}>{configApp.window.title}</span>
         </div>
       );
-    } else if (this._operatingSystem === "Linux" || this._operatingSystem === "Windows_NT") {
+    } else if (this._operatingSystem === 'Linux' || this._operatingSystem === 'Windows_NT') {
       this._heightOfTitleBar = '30px';
       this._paddingInterElement = '10px';
       const styles = {
@@ -56,8 +55,8 @@ export default class TitleBar extends React.Component {
 
         },
         controlLeft: {
-          fontFamily: 'Helvetica',
-          fontSize: 12,
+          fontFamily: 'Helvetica Neue',
+          fontSize: 14,
           color: '#9DA5B4',
           lineHeight: this._heightOfTitleBar,
           textAlign: 'center',
@@ -66,21 +65,21 @@ export default class TitleBar extends React.Component {
           paddingLeft: this._paddingInterElement,
 
         }
-      }
+      };
       return (
-        <Flexbox flexDirection="row" justifyContent="space-between" style={styles.titleContainer}>
+        <Flexbox flexDirection='row' justifyContent='space-between' style={styles.titleContainer}>
           <div style={styles.controlLeft}>
             <div style={styles.elementOnBar}>
               <span>{configApp.window.title}</span>
             </div>
           </div>
           <div style={styles.controlRight}>
-            <WindowsWindowControl colorOfControl="#BBBBBB" onOverColor="#EEEEEE" height={this._heightOfTitleBar}/>
+            <WindowsWindowControl colorOfControl='#BBBBBB' onOverColor='#EEEEEE' height={this._heightOfTitleBar}/>
           </div>
         </Flexbox>
-      )
+      );
     } else {
-      return (<div><p>No detected operating system (NavigationBar react component)</p></div>)
+      return (<div><p>No detected operating system (NavigationBar react component)</p></div>);
     }
   }
 }

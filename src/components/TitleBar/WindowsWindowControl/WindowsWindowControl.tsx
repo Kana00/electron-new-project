@@ -2,29 +2,77 @@
 import * as React from 'react';
 import * as electron from 'electron';
 import Flexbox from 'flexbox-react';
+import * as classNames from 'classnames';
 
 export default class WindowsWindowControl extends React.Component<WindowsWindowControlPropsType, any> {
   sizePixel: number | string;
   isMaxSizeWindow: boolean;
   constructor(props: WindowsWindowControlPropsType) {
     super(props);
-    this.state = { isMaxSizeWindow: false, styleControl: {
-        color: this.props.colorOfControl,
-      }
-    }
+    this.state = {
+      isMaxSizeWindow: false,
+      isOverMinus: false,
+      isOverPlus: false,
+      isOverClose: false
+    };
     this.actionControlWindow = this.actionControlWindow.bind(this);
   }
 
   onOver(event: any) {
-    console.log('onOver');
-    event.target.style.color = this.props.onOverColor;
-  }
+    let nodeClass = null;
+    if (event.target !== null) {
+      nodeClass = event.target;
+    } else {
+      return;
+    }
+    if (event.target.firstChild !== null ) {
+      nodeClass = event.target.firstChild;
+    }
+    switch (nodeClass.classList.value) {
+      case 'ti-minus':
+          this.setState({ isOverMinus: true });
+          break;
+        case 'ti-layers':
+          this.setState({ isOverPlus: true });
+          break;
+        case 'ti-plus':
+          this.setState({ isOverPlus: true });
+          break;
+        case 'ti-close':
+          this.setState({ isOverClose: true });
+          break;
+      default:
+        break;
+    }
 
+  }
   onLeave(event: any) {
-    console.log('onLeave');
-    event.target.style.color = this.props.colorOfControl;
+    let nodeClass = null;
+    if (event.target !== null) {
+      nodeClass = event.target;
+    } else {
+      return;
+    }
+    if (event.target.firstChild !== null ) {
+      nodeClass = event.target.firstChild;
+    }
+    switch (nodeClass.classList.value) {
+      case 'ti-minus':
+          this.setState({ isOverMinus: false });
+          break;
+        case 'ti-layers':
+          this.setState({ isOverPlus: false });
+          break;
+        case 'ti-plus':
+          this.setState({ isOverPlus: false });
+          break;
+        case 'ti-close':
+          this.setState({ isOverClose: false });
+          break;
+      default:
+        break;
+    }
   }
-
   actionControlWindow(actionToTheWindow: string) {
     const window = electron.remote.getCurrentWindow();
     switch (actionToTheWindow) {
@@ -32,12 +80,16 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
         window.close();
         break;
       case 'ask change size of window':
-        if(this.state.isMaxSizeWindow === false) {
-          this.setState({ isMaxSizeWindow: true });
-          window.maximize();
+        if (this.state.isMaxSizeWindow === false) {
+          if (!window.isMaximized()) {
+            this.setState({ isMaxSizeWindow: true });
+            window.maximize();
+          }
         } else {
-          this.setState({ isMaxSizeWindow: false });
-          window.unmaximize();
+          if (window.isMaximized()) {
+            this.setState({ isMaxSizeWindow: false });
+            window.unmaximize();
+          }
         }
         break;
       case 'minus window':
@@ -51,9 +103,10 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
     this.sizePixel.substring(0, this.sizePixel.length - 2);
     try {
       this.sizePixel = parseInt(this.sizePixel);
-      this.sizePixel = this.sizePixel/2;
+      this.sizePixel = this.sizePixel / 2;
       this.sizePixel = this.sizePixel + 'px';
-    } catch (e) { console.log(e)}
+    } catch (e) { console.log(e); }
+
     const styles = {
       controlContainer: {
         color: this.props.colorOfControl,
@@ -63,36 +116,45 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
       themifyElement: {
         paddingRight: '10px',
         paddingLeft: '10px',
+      },
+      onOver: {
+        paddingRight: '10px',
+        paddingLeft: '10px',
+        color: this.props.onOverColor,
       }
-    }
+    };
     return (
-      <Flexbox flexDirection="row" justifyContent="center" alignItems="center" style={styles.controlContainer}>
+      <Flexbox flexDirection='row' justifyContent='center' alignItems='center' style={styles.controlContainer}>
+
         <div
         onMouseOver={(event) => this.onOver(event)}
-        onMouseLeave={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow("minus window")}
-        style={styles.themifyElement} >
-          <span className="ti-minus"></span>
+        onMouseOut={(event) => this.onLeave(event)}
+        onClick={() => this.actionControlWindow('minus window')}
+        style={(this.state.isOverMinus) ? styles.onOver : styles.themifyElement} >
+          <span className='ti-minus'></span>
         </div>
+
         <div
         onMouseOver={(event) => this.onOver(event)}
-        onMouseLeave={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow("ask change size of window")}
-        style={styles.themifyElement} >
+        onMouseOut={(event) => this.onLeave(event)}
+        onClick={() => this.actionControlWindow('ask change size of window')}
+        style={(this.state.isOverPlus) ? styles.onOver : styles.themifyElement} >
           {
             (this.state.isMaxSizeWindow) ?
-            <span className="ti-layers"></span>
+            <span className='ti-layers'></span>
             :
-            <span className="ti-plus"></span>
+            <span className='ti-plus'></span>
           }
         </div>
+
         <div
         onMouseOver={(event) => this.onOver(event)}
-        onMouseLeave={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow("close window")}
-        style={styles.themifyElement}>
-          <span className="ti-close"></span>
+        onMouseOut={(event) => this.onLeave(event)}
+        onClick={() => this.actionControlWindow('close window')}
+        style={(this.state.isOverClose) ? styles.onOver : styles.themifyElement}>
+          <span className='ti-close'></span>
         </div>
+
       </Flexbox>
     );
   }
