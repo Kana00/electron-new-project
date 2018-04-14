@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Root from './navigation/root';
 import NoMatch from './navigation/NoMatch';
 import Home from './navigation/Home';
-import TitleBar from './components/TitleBar/TitleBar'
+import TitleBar from './components/TitleBar/TitleBar';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
 /// <reference path="./interfaces.d.ts" />

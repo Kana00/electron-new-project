@@ -5,9 +5,10 @@ const initialState: MessageStateType = {
 };
 
 /// <reference path="../../interfaces.d.ts" />
-export default function rootScreenReducer(state: MessageStateType = initialState,
-  action: MessageActionType): MessageStateType {
-
+export default function rootScreenReducer(
+  state: MessageStateType = initialState,
+  action: MessageActionType
+): MessageStateType {
   switch (action.type) {
     case ADD_MESSAGE:
         state = Object.assign({}, {message : action.message});
@@ -18,7 +19,7 @@ export default function rootScreenReducer(state: MessageStateType = initialState
     default:
       return state;
   }
-};
+}
 
 // note :
 // Object.assign allow you to not assigne by reference but rather by value

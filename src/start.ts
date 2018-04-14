@@ -15,12 +15,12 @@ if (appconfigrc.environment.isLiveReloading) {
 
 const createWindow = async () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow(appconfigrc.window);
+  mainWindow = new BrowserWindow(Object.assign({show: false}, appconfigrc.window));
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-  if(appconfigrc.environment.isWindowAlwaysOnTop && appconfigrc.environment.isDevelopment) {
+  if (appconfigrc.environment.isWindowAlwaysOnTop && appconfigrc.environment.isDevelopment) {
     mainWindow.setAlwaysOnTop(appconfigrc.environment.isDevelopment);
   }
 
@@ -37,6 +37,14 @@ const createWindow = async () => {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  mainWindow.once('ready-to-show', () => {
+    if ( mainWindow !== null) {
+      mainWindow.show();
+    } else {
+      console.log ('mainWindow is null');
+    }
   });
 };
 

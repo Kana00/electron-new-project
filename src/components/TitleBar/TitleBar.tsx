@@ -66,11 +66,12 @@ export default class TitleBar extends React.Component {
 
         }
       };
+      const test = 'test';
       return (
         <Flexbox flexDirection='row' justifyContent='space-between' style={styles.titleContainer}>
           <div style={styles.controlLeft}>
             <div style={styles.elementOnBar}>
-              <span>{configApp.window.title}</span>
+              <span>{configApp.window.title} ⎪ File___Edit___View___Help</span>
             </div>
           </div>
           <div style={styles.controlRight}>
