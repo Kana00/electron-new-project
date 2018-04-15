@@ -77,11 +77,14 @@
     "tslib": "^1.4.0"
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^16.0.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.1.1",
     "electron-prebuilt-compile": "1.8.3",
+    "jest-canvas-mock": "^1.0.2",
+    "react-test-renderer": "^16.3.1",
     "ts-jest": "^22.4.1",
     "tslint": "^5.1.0",
     "tslint-microsoft-contrib": "^5.0.3",
@@ -96,6 +99,9 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
   }
 }

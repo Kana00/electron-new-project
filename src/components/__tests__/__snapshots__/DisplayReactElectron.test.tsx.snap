@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component DisplayReactElectron render correctly 1`] = `
+<div
+  className="sc-bdVaJa gHzutc"
+  style={
+    Object {
+      "height": "70vh",
+    }
+  }
+>
+  <div
+    className="sc-bdVaJa gHzutc"
+    style={
+      Object {
+        "height": "100%",
+        "marginTop": "1rem",
+        "weight": "100%",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "color": "#BBBBBB",
+          "fontFamily": "SourceCodeRoman-ExtraLight",
+          "fontSize": 80,
+          "marginTop": -40,
+        }
+      }
+    >
+      React
+    </span>
+  </div>
+</div>
+`;
