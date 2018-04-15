@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component WindowsWindowControl render correctly 1`] = `
+<div
+  className="sc-bdVaJa dkRebT"
+  style={
+    Object {
+      "color": "#BBBBBB",
+      "fontSize": "15px",
+      "lineHeight": "30px",
+    }
+  }
+>
+  <div
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "paddingLeft": "10px",
+        "paddingRight": "10px",
+      }
+    }
+  >
+    <span
+      className="ti-minus"
+    />
+  </div>
+  <div
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "paddingLeft": "10px",
+        "paddingRight": "10px",
+      }
+    }
+  >
+    <span
+      className="ti-plus"
+    />
+  </div>
+  <div
+    onClick={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "paddingLeft": "10px",
+        "paddingRight": "10px",
+      }
+    }
+  >
+    <span
+      className="ti-close"
+    />
+  </div>
+</div>
+`;

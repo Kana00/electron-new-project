@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component TitleBar render correctly 1`] = `
+<div
+  className="sc-bdVaJa cmuWdh"
+  style={
+    Object {
+      "WebkitAppRegion": "drag",
+      "WebkitUserSelect": "none",
+      "backgroundColor": "#282C34",
+      "fontWeight": "100",
+      "height": "30px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "#9DA5B4",
+        "fontFamily": "Helvetica Neue",
+        "fontSize": 14,
+        "lineHeight": "30px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "paddingLeft": "10px",
+        }
+      }
+    >
+      <span>
+        My new project
+         ⎪ File___Edit___View___Help
+      </span>
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="sc-bdVaJa dkRebT"
+      style={
+        Object {
+          "color": "#BBBBBB",
+          "fontSize": "15px",
+          "lineHeight": "30px",
+        }
+      }
+    >
+      <div
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "paddingLeft": "10px",
+            "paddingRight": "10px",
+          }
+        }
+      >
+        <span
+          className="ti-minus"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "paddingLeft": "10px",
+            "paddingRight": "10px",
+          }
+        }
+      >
+        <span
+          className="ti-plus"
+        />
+      </div>
+      <div
+        onClick={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        style={
+          Object {
+            "paddingLeft": "10px",
+            "paddingRight": "10px",
+          }
+        }
+      >
+        <span
+          className="ti-close"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
