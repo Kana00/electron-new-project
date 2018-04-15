@@ -1,38 +1,29 @@
 import * as React from 'react';
 import Lottie from 'react-lottie';
+import Flexbox from 'flexbox-react';
 
 
 export default class DisplayReactElectron extends React.Component {
   render() {
     const styles = {
       viewContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
         height: '70vh',
       },
       contentContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItem: 'center',
         marginTop: '1rem',
         height: '100%',
         weight: '100%',
       },
       text: {
         fontFamily: 'SourceCodeRoman-ExtraLight',
-        fontWeight: '100',
-        textAlign: 'center',
         color: '#BBBBBB',
         fontSize: 80,
         marginTop: -40,
       },
     }
     return (
-      <div style={styles.viewContainer}>
-        <div style={styles.contentContainer}>
+      <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.viewContainer}>
+        <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.contentContainer}>
           <Lottie
             options={{
               loop: false,
@@ -45,8 +36,8 @@ export default class DisplayReactElectron extends React.Component {
             isPaused={false}
           />
           <span style={styles.text}>React</span>
-        </div>
-      </div>
+        </Flexbox>
+      </Flexbox>
     );
   }
 }
