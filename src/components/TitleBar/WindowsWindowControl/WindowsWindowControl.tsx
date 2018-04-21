@@ -1,8 +1,7 @@
-/// <reference path="../../../interfaces.d.ts" />
 import * as React from 'react';
 import * as electron from 'electron';
 import Flexbox from 'flexbox-react';
-import * as classNames from 'classnames';
+import ButtonThemify from '../../ButtonThemify/ButtonThemify';
 
 export default class WindowsWindowControl extends React.Component<WindowsWindowControlPropsType, any> {
   sizePixel: number | string;
@@ -112,29 +111,13 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
         color: this.props.colorOfControl,
         lineHeight: (this.props.height) ? this.props.height : '100%',
         fontSize: (this.props.height) ? this.sizePixel : '100%',
-      },
-      themifyElement: {
-        paddingRight: '10px',
-        paddingLeft: '10px',
-      },
-      onOver: {
-        paddingRight: '10px',
-        paddingLeft: '10px',
-        color: this.props.onOverColor,
       }
     };
     return (
       <Flexbox flexDirection='row' justifyContent='center' alignItems='center' style={styles.controlContainer}>
 
-        <div
-        onMouseOver={(event) => this.onOver(event)}
-        onMouseOut={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow('minus window')}
-        style={(this.state.isOverMinus) ? styles.onOver : styles.themifyElement} >
-          <span className='ti-minus'></span>
-        </div>
-
-        <div
+        <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-minus'/>
+        {/* <div
         onMouseOver={(event) => this.onOver(event)}
         onMouseOut={(event) => this.onLeave(event)}
         onClick={() => this.actionControlWindow('ask change size of window')}
@@ -153,7 +136,7 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
         onClick={() => this.actionControlWindow('close window')}
         style={(this.state.isOverClose) ? styles.onOver : styles.themifyElement}>
           <span className='ti-close'></span>
-        </div>
+        </div> */}
 
       </Flexbox>
     );

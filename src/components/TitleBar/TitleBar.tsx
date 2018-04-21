@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as os from 'os';
 import Flexbox from 'flexbox-react';
-import configApp from '../../appconfigrc';
-import './TitleBar';
+import configApp from '../../config/appconfigrc';
 import WindowsWindowControl from './WindowsWindowControl/WindowsWindowControl';
 
-export default class TitleBar extends React.Component {
+
+export default class TitleBar extends React.Component<TitleBarPropsType, TitleBarStateType > {
   private _operatingSystem: string;
   private _heightOfTitleBar: string;
   private _paddingInterElement: string;
@@ -45,7 +45,7 @@ export default class TitleBar extends React.Component {
       this._paddingInterElement = '10px';
       const styles = {
         titleContainer: {
-          backgroundColor: '#282C34',
+          backgroundColor: this.props.backgroundColor,
           height: this._heightOfTitleBar,
           WebkitUserSelect: 'none',
           WebkitAppRegion: 'drag',
@@ -59,23 +59,20 @@ export default class TitleBar extends React.Component {
           fontSize: 14,
           color: '#9DA5B4',
           lineHeight: this._heightOfTitleBar,
-          textAlign: 'center',
         },
         elementOnBar: {
           paddingLeft: this._paddingInterElement,
-
         }
       };
-      const test = 'test';
       return (
         <Flexbox flexDirection='row' justifyContent='space-between' style={styles.titleContainer}>
           <div style={styles.controlLeft}>
             <div style={styles.elementOnBar}>
-              <span>{configApp.window.title} ⎪ File___Edit___View___Help</span>
+              <span>{configApp.window.title}</span>
             </div>
           </div>
           <div style={styles.controlRight}>
-            <WindowsWindowControl colorOfControl='#BBBBBB' onOverColor='#EEEEEE' height={this._heightOfTitleBar}/>
+            <WindowsWindowControl colorOfControl={this.props.textColor} height={this._heightOfTitleBar}/>
           </div>
         </Flexbox>
       );

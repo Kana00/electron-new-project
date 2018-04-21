@@ -4,7 +4,6 @@ const initialState: MessageStateType = {
   message: '',
 };
 
-/// <reference path="../../interfaces.d.ts" />
 export default function rootScreenReducer(
   state: MessageStateType = initialState,
   action: MessageActionType

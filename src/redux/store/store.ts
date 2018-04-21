@@ -5,7 +5,6 @@ import { createStore, combineReducers } from 'redux';
 import rootScreenReducer from '../reducer/rootScreenReducer';
 /* ---------------------------------------------------------- */
 
-/// <reference path="../../interfaces.d.ts" />
 /* ------------ step 2 : Combine all you reducer ------------ */
 const combinedReducer = combineReducers(
   {

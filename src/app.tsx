@@ -6,12 +6,12 @@ import Home from './navigation/Home';
 import TitleBar from './components/TitleBar/TitleBar';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
-/// <reference path="./interfaces.d.ts" />
+
 export class App extends React.Component<AppPropsType, any> {
   render() {
     return (
       <div>
-        <TitleBar />
+        <TitleBar backgroundColor='#282C34' textColor='#BBBBBB' />
 
         <Switch>
           {/* subscribe all your route here */}

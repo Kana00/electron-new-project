@@ -3,7 +3,6 @@
  * the actions sent to the reducer must always be formatted in the same way
  */
 
-/// <reference path="../../interfaces.d.ts"/>
 
 import { ADD_MESSAGE, REMOVE_MESSAGE } from './listeAction';
 

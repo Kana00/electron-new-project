@@ -5,7 +5,6 @@ import __ from "../i18n/Language";
 import * as moment from 'moment';
 
 
-/// <reference path="../interfaces.d.ts" />
 class Home extends React.Component<any, HomeStateType> {
   timerID: any;
   constructor(props: any) {
