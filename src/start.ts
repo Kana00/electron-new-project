@@ -1,7 +1,8 @@
 import { app, BrowserWindow } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
 import { enableLiveReload } from 'electron-compile';
-import appconfigrc from './config/appconfigrc';
+import environmentConfig from './config/environmentConfig';
+import windowConfig from './config/windowConfig';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -9,23 +10,23 @@ let mainWindow: Electron.BrowserWindow | null = null;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
 
-if (appconfigrc.environment.isLiveReloading) {
+if (environmentConfig.isLiveReloading) {
   enableLiveReload({strategy: 'react-hmr'});
 }
 
 const createWindow = async () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow(Object.assign({show: false}, appconfigrc.window));
+  mainWindow = new BrowserWindow(Object.assign({show: false}, windowConfig));
 
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-  if (appconfigrc.environment.isWindowAlwaysOnTop && appconfigrc.environment.isDevelopment) {
-    mainWindow.setAlwaysOnTop(appconfigrc.environment.isDevelopment);
+  if (environmentConfig.isWindowAlwaysOnTop && environmentConfig.isDevelopment) {
+    mainWindow.setAlwaysOnTop(environmentConfig.isDevelopment);
   }
 
   // Open the DevTools.
-  if (appconfigrc.environment.isShowDebugToolsStartUp) {
+  if (environmentConfig.isShowDebugToolsStartUp) {
     await installExtension(REACT_DEVELOPER_TOOLS);
     await installExtension(REDUX_DEVTOOLS);
     mainWindow.webContents.openDevTools();

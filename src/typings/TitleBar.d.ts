@@ -7,4 +7,6 @@ interface TitleBarPropsType {
   textColor: string,
 }
 
-interface TitleBarStateType {}
+interface TitleBarStateType {
+  windowIsInFullScreen: boolean,
+}
