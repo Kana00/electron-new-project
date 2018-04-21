@@ -22,6 +22,18 @@ html body {
   margin: 0;
   padding: 0;
   font-family: "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  // remove draggale and selectable for all element
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  // when user hover a text, remove the textSelect mouse
+  &:hover {
+    cursor: default;
+  }
+  // when user click on a focus element, one outline blue is display.
+  // Remove this not expected behavior with this class
+  .removeOutLine:focus {
+    outline: 0;
+  }
 }
 
 input[type="button"] {
