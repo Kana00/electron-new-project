@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import * as classNames from 'classnames';
 import { lightenColor, darkenColor  } from '../../utils/colorTools';
 
 
@@ -24,30 +23,44 @@ export default class ButtonThemify extends React.Component<ButtonThemifyPropsTyp
     this.setState({ isOnPress: true });
   }
 
+  resetStyle() {
+    this.setState({isOver: false, isOnPress: false});
+  }
+
 
   render() {
-    const styles = {
-      themifyElement: {
-        paddingRight: '10px',
-        paddingLeft: '10px',
-      },
-      onOver: {
-        paddingRight: '10px',
-        paddingLeft: '10px',
-        color: lightenColor(this.props.textColor, 100),
-      },
-      onPress: {
+    let actualStyle = {};
+    if (this.state.isOnPress) {
+      actualStyle = {
         paddingRight: '10px',
         paddingLeft: '10px',
         color: darkenColor(this.props.textColor, 100),
-      },
+      }
+    }
+    else if (this.state.isOver) {
+      actualStyle = {
+        paddingRight: '10px',
+        paddingLeft: '10px',
+        color: lightenColor(this.props.textColor, 100),
+      }
+    } else {
+      actualStyle = {
+        paddingRight: '10px',
+        paddingLeft: '10px',
+      }
     }
     return (
       <div
         onMouseOver={() => this.onOver()}
         onMouseOut={() => this.onLeave()}
         onMouseDown={() => this.onPressDown()}
-        style={(this.state.isOver) ? styles.onOver : styles.themifyElement}>
+        onMouseUp={() => {
+          this.resetStyle();
+          this.props.click();
+          }
+        }
+        onMouseLeave={() => this.resetStyle()}
+        style={actualStyle}>
           <span className={this.props.codeThemify}></span>
       </div>
     );

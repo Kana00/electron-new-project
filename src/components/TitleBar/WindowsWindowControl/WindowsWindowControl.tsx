@@ -4,96 +4,36 @@ import Flexbox from 'flexbox-react';
 import ButtonThemify from '../../ButtonThemify/ButtonThemify';
 
 export default class WindowsWindowControl extends React.Component<WindowsWindowControlPropsType, any> {
-  sizePixel: number | string;
-  isMaxSizeWindow: boolean;
+  private sizePixel: number | string;
+  private isMaxSizeWindow: boolean;
+  private electronWindow: any;
   constructor(props: WindowsWindowControlPropsType) {
     super(props);
+
+    this.electronWindow = electron.remote.getCurrentWindow();
+
     this.state = {
       isMaxSizeWindow: false,
       isOverMinus: false,
       isOverPlus: false,
       isOverClose: false
     };
-    this.actionControlWindow = this.actionControlWindow.bind(this);
-  }
 
-  onOver(event: any) {
-    let nodeClass = null;
-    if (event.target !== null) {
-      nodeClass = event.target;
-    } else {
-      return;
-    }
-    if (event.target.firstChild !== null ) {
-      nodeClass = event.target.firstChild;
-    }
-    switch (nodeClass.classList.value) {
-      case 'ti-minus':
-          this.setState({ isOverMinus: true });
-          break;
-        case 'ti-layers':
-          this.setState({ isOverPlus: true });
-          break;
-        case 'ti-plus':
-          this.setState({ isOverPlus: true });
-          break;
-        case 'ti-close':
-          this.setState({ isOverClose: true });
-          break;
-      default:
-        break;
-    }
+    this.maximizeWindow = this.maximizeWindow.bind(this);
 
   }
-  onLeave(event: any) {
-    let nodeClass = null;
-    if (event.target !== null) {
-      nodeClass = event.target;
+
+  maximizeWindow() {
+    if (this.state.isMaxSizeWindow === false) {
+      if (!this.electronWindow.isMaximized()) {
+        this.setState({ isMaxSizeWindow: true });
+        this.electronWindow.maximize();
+      }
     } else {
-      return;
-    }
-    if (event.target.firstChild !== null ) {
-      nodeClass = event.target.firstChild;
-    }
-    switch (nodeClass.classList.value) {
-      case 'ti-minus':
-          this.setState({ isOverMinus: false });
-          break;
-        case 'ti-layers':
-          this.setState({ isOverPlus: false });
-          break;
-        case 'ti-plus':
-          this.setState({ isOverPlus: false });
-          break;
-        case 'ti-close':
-          this.setState({ isOverClose: false });
-          break;
-      default:
-        break;
-    }
-  }
-  actionControlWindow(actionToTheWindow: string) {
-    const window = electron.remote.getCurrentWindow();
-    switch (actionToTheWindow) {
-      case 'close window':
-        window.close();
-        break;
-      case 'ask change size of window':
-        if (this.state.isMaxSizeWindow === false) {
-          if (!window.isMaximized()) {
-            this.setState({ isMaxSizeWindow: true });
-            window.maximize();
-          }
-        } else {
-          if (window.isMaximized()) {
-            this.setState({ isMaxSizeWindow: false });
-            window.unmaximize();
-          }
-        }
-        break;
-      case 'minus window':
-        window.minimize();
-      default:
+      if (this.electronWindow.isMaximized()) {
+        this.setState({ isMaxSizeWindow: false });
+        this.electronWindow.unmaximize();
+      }
     }
   }
 
@@ -116,27 +56,14 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
     return (
       <Flexbox flexDirection='row' justifyContent='center' alignItems='center' style={styles.controlContainer}>
 
-        <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-minus'/>
-        {/* <div
-        onMouseOver={(event) => this.onOver(event)}
-        onMouseOut={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow('ask change size of window')}
-        style={(this.state.isOverPlus) ? styles.onOver : styles.themifyElement} >
-          {
-            (this.state.isMaxSizeWindow) ?
-            <span className='ti-layers'></span>
-            :
-            <span className='ti-plus'></span>
-          }
-        </div>
-
-        <div
-        onMouseOver={(event) => this.onOver(event)}
-        onMouseOut={(event) => this.onLeave(event)}
-        onClick={() => this.actionControlWindow('close window')}
-        style={(this.state.isOverClose) ? styles.onOver : styles.themifyElement}>
-          <span className='ti-close'></span>
-        </div> */}
+        <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-minus' click={() => this.electronWindow.minimize()}/>
+        {
+          (this.state.isMaxSizeWindow) ?
+          <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-layers' click={() => this.maximizeWindow()}/>
+          :
+          <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-plus' click={() => this.maximizeWindow()}/>
+        }
+        <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-close' click={() => this.electronWindow.close()}/>
 
       </Flexbox>
     );

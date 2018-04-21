@@ -1,6 +1,7 @@
 interface ButtonThemifyPropsType {
   textColor: string,
   codeThemify: string,
+  click: ()=>void,
 }
 
 interface ButtonThemifyStateType {

@@ -7,8 +7,8 @@ import WindowsWindowControl from './WindowsWindowControl/WindowsWindowControl';
 
 export default class TitleBar extends React.Component<TitleBarPropsType, TitleBarStateType > {
   private _operatingSystem: string;
-  private _heightOfTitleBar: string;
-  private _paddingInterElement: string;
+  private heightOfTitleBar: string;
+  private paddingInterElement: string;
   constructor(props: any) {
     super(props);
     this._operatingSystem = os.type();
@@ -41,12 +41,12 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         </div>
       );
     } else if (this._operatingSystem === 'Linux' || this._operatingSystem === 'Windows_NT') {
-      this._heightOfTitleBar = '30px';
-      this._paddingInterElement = '10px';
+      this.heightOfTitleBar = '30px';
+      this.paddingInterElement = '10px';
       const styles = {
         titleContainer: {
           backgroundColor: this.props.backgroundColor,
-          height: this._heightOfTitleBar,
+          height: this.heightOfTitleBar,
           WebkitUserSelect: 'none',
           WebkitAppRegion: 'drag',
           fontWeight: '100',
@@ -58,10 +58,10 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
           fontFamily: 'Helvetica Neue',
           fontSize: 14,
           color: '#9DA5B4',
-          lineHeight: this._heightOfTitleBar,
+          lineHeight: this.heightOfTitleBar,
         },
         elementOnBar: {
-          paddingLeft: this._paddingInterElement,
+          paddingLeft: this.paddingInterElement,
         }
       };
       return (
@@ -72,7 +72,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
             </div>
           </div>
           <div style={styles.controlRight}>
-            <WindowsWindowControl colorOfControl={this.props.textColor} height={this._heightOfTitleBar}/>
+            <WindowsWindowControl colorOfControl={this.props.textColor} height={this.heightOfTitleBar}/>
           </div>
         </Flexbox>
       );
