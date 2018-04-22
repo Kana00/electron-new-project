@@ -41,11 +41,18 @@ declare module 'react-lottie' {
    */
   interface LottiePropsType {
     options: LottieBodymovinOptionProps,
-    height?: number,
-    width?: number,
+    height?: number | string,
+    width?: number | string,
     isStopped: boolean,
     isPaused: boolean,
     eventListeners?: Array<BodymovinEvent>
+    segments?: Array<number>
+    speed?: number | 1,
+    direction?: number,
+    ariaRole?: string | 'button',
+    ariaLabel?: string | 'animation',
+    isClickToPauseDisabled?: boolean,
+    title?: string,
   }
   /**
    * @component Lottie is a component that allow you to use animation from JSON file that created by

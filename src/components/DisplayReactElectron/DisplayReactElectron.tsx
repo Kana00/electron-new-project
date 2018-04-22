@@ -34,6 +34,9 @@ export default class DisplayReactElectron extends React.Component<{}, {}> {
             width={200}
             isStopped={false}
             isPaused={false}
+            isClickToPauseDisabled={true}
+            ariaRole='none'
+            ariaLabel='none'
           />
           <span style={styles.text}>React</span>
         </Flexbox>
