@@ -3,7 +3,7 @@ import DisplayReactElectron from '../components/DisplayReactElectron/DisplayReac
 import __ from '../i18n/Language';
 
 // URL = /
-export default class Root extends React.Component<any, any> {
+export default class Main extends React.Component<any, any> {
   render() {
     return (
       <div>

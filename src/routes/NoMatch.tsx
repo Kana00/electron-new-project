@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Lottie from 'react-lottie';
 
-export default class NoMatch extends React.Component<any> {
+export default class NoMatch extends React.Component<any, any> {
   render() {
     const styles = {
       viewContainer: {

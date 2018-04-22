@@ -12,8 +12,7 @@ I18n.setTranslations({
 });
 
 function translateNumber(oneNumber: number) {
-  return oneNumber.toLocaleString(I18n._locale);
-  console.log(I18n._locale);
+  return oneNumber.toLocaleString();
 }
 
 // we only need one method from I18n to translate string

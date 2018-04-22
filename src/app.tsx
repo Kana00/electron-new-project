@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Root from './routes/root';
+import Main from './routes/Main';
 import NoMatch from './routes/NoMatch';
 import Home from './routes/Home';
 import TitleBar from './components/TitleBar/TitleBar';
@@ -15,7 +15,7 @@ export class App extends React.Component<AppPropsType, any> {
 
         <Switch>
           {/* subscribe all your route here */}
-          <Route exact={true} path={"/"} component={Root}/>
+          <Route exact={true} path={"/"} component={Main}/>
           <Route exact={true} path={"/home"} component={Home}/>
           <Route component={NoMatch}/>
         </Switch>
