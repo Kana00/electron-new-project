@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Root from './navigation/root';
-import NoMatch from './navigation/NoMatch';
-import Home from './navigation/Home';
+import Root from './routes/root';
+import NoMatch from './routes/NoMatch';
+import Home from './routes/Home';
 import TitleBar from './components/TitleBar/TitleBar';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
