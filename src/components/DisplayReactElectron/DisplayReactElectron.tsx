@@ -2,7 +2,6 @@ import * as React from 'react';
 import Lottie from 'react-lottie';
 import Flexbox from 'flexbox-react';
 
-
 export default class DisplayReactElectron extends React.Component<{}, {}> {
   render() {
     const styles = {
