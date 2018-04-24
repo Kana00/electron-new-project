@@ -5,10 +5,10 @@ export function setLighterTheme() {
   return {
     type: SET_LIGHTER_THEME,
     theme: {
-      textColor: '#343434',
-      backgroundColorApp: '#F4F4F4',
-      titleBarWindowColor: '#FFFFFF',
-      navigationBarColor: '#FFFFFF',
+      textColor: '#3E3D3E',
+      backgroundColorApp: '#FFFFFF',
+      titleBarWindowColor: '#DDDDDD',
+      navigationBarColor: '#F3F3F3',
     }
   }
 }

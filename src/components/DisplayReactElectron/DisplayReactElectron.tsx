@@ -2,7 +2,7 @@ import * as React from 'react';
 import Lottie from 'react-lottie';
 import Flexbox from 'flexbox-react';
 
-export default class DisplayReactElectron extends React.Component<{}, {}> {
+export default class DisplayReactElectron extends React.Component<any, any> {
   render() {
     const styles = {
       viewContainer: {
@@ -14,7 +14,7 @@ export default class DisplayReactElectron extends React.Component<{}, {}> {
         weight: '100%',
       },
       text: {
-        color: '#BBBBBB',
+        color: this.props.textColor,
         fontSize: 80,
         marginTop: -40,
       },
