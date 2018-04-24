@@ -32,19 +32,21 @@ export default class ButtonThemify extends React.Component<ButtonThemifyPropsTyp
     let actualStyle = {};
     if (this.state.isOnPress) {
       actualStyle = {
+        WebkitAppRegion: 'no-drag',
         paddingRight: '10px',
         paddingLeft: '10px',
         color: darkenColor(this.props.textColor, 100),
       }
-    }
-    else if (this.state.isOver) {
+    } else if (this.state.isOver) {
       actualStyle = {
+        WebkitAppRegion: 'no-drag',
         paddingRight: '10px',
         paddingLeft: '10px',
         color: lightenColor(this.props.textColor, 100),
       }
     } else {
       actualStyle = {
+        WebkitAppRegion: 'no-drag',
         paddingRight: '10px',
         paddingLeft: '10px',
       }

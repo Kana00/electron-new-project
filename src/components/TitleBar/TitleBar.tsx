@@ -20,12 +20,21 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
 
     this._operatingSystem = os.type();
     this.electronWindow = electron.remote.getCurrentWindow();
-    this.electronWindow.on('enter-full-screen', () => {
-      this.setState({ windowIsInFullScreen: true });
-    });
-    this.electronWindow.on('leave-full-screen', () => {
-      this.setState({ windowIsInFullScreen: false });
-    });
+    if (this._operatingSystem === 'Darwin') {
+      this.electronWindow.on('enter-full-screen', () => {
+        this.setState({ windowIsInFullScreen: true });
+      });
+      this.electronWindow.on('leave-full-screen', () => {
+        this.setState({ windowIsInFullScreen: false });
+      });
+    } else {
+      this.electronWindow.on('maximize', () => {
+        this.setState({ windowIsInFullScreen: true });
+      });
+      this.electronWindow.on('unmaximize', () => {
+        this.setState({ windowIsInFullScreen: false });
+      });
+    }
   }
 
   renderTitleBarForMacOs(): JSX.Element {
@@ -58,7 +67,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
   }
 
   renderTitleBarForWindowsAndLinux(): JSX.Element {
-    this.heightOfTitleBar = '30px';
+    this.heightOfTitleBar = (this.state.windowIsInFullScreen) ? '22px' : '29px';
     this.paddingInterElement = '10px';
     const styles = {
       titleContainer: {
@@ -72,7 +81,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
 
       },
       controlLeft: {
-        fontFamily: 'Helvetica Neue',
+        fontFamily: 'SourceCodePro',
         fontSize: 14,
         color: this.props.textColor,
         lineHeight: this.heightOfTitleBar,

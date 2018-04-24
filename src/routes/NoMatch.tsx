@@ -12,7 +12,6 @@ export default class NoMatch extends React.Component<any, any> {
         height: '70vh',
       },
       title: {
-        fontFamily: 'SourceCodeRoman-ExtraLight',
         fontWeight: '100',
         color: '#BBBBBB',
       },

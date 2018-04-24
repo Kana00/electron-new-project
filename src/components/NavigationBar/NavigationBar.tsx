@@ -27,7 +27,7 @@ export default class NavigationBar extends React.Component {
     };
     return(
       <Flexbox flexDirection='row' justifyContent='space-between' alignItems='center' style={styles.navigationContainer}>
-        <Link style={ styles.styleLink } to='/'>Root</Link>
+        <Link style={ styles.styleLink } to='/'>Main</Link>
         <Link style={ styles.styleLink } to='/home'>Home</Link>
         <Link style={ styles.styleLink } to='/hosdfsdfme'>NoMatch</Link>
       </Flexbox>

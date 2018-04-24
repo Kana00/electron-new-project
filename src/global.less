@@ -21,7 +21,7 @@ html body {
   width: 100vw;
   margin: 0;
   padding: 0;
-  font-family: "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+
   // remove draggale and selectable for all element
   -webkit-app-region: no-drag;
   -webkit-user-select: none;
@@ -39,9 +39,15 @@ html body {
     font-family: 'SourceCodeRoman-ExtraLight';
     font-weight: 100;
   }
+
   div {
     outline: 0;
   }
+}
+
+// use a default font
+html * {
+  font-family: "SourceCodeRoman-ExtraLight", "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
 }
 
 input[type="button"] {

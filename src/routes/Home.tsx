@@ -39,7 +39,6 @@ class Home extends React.Component<any, HomeStateType> {
         minWidth: '50em',
         width: '50vw',
         color: '#BBBBBB',
-        fontFamily: 'SourceCodeRoman-ExtraLight',
         fontWeight: '100',
         backgroundColor: '#282C34',
         borderBottom: '5px solid #181C24',
@@ -54,7 +53,7 @@ class Home extends React.Component<any, HomeStateType> {
     return (
       <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.viewContainer}>
         <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.homeContainer}>
-          <h1 className='thinText'>Home component</h1>
+          <h1>Home component</h1>
 
           <p>Translation exemple ⤑ {__("application.hello")} {__(1000.443)} ⤎</p>
 

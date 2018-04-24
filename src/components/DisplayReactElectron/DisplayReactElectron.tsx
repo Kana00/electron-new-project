@@ -2,7 +2,6 @@ import * as React from 'react';
 import Lottie from 'react-lottie';
 import Flexbox from 'flexbox-react';
 
-
 export default class DisplayReactElectron extends React.Component<{}, {}> {
   render() {
     const styles = {
@@ -15,7 +14,6 @@ export default class DisplayReactElectron extends React.Component<{}, {}> {
         weight: '100%',
       },
       text: {
-        fontFamily: 'SourceCodeRoman-ExtraLight',
         color: '#BBBBBB',
         fontSize: 80,
         marginTop: -40,
