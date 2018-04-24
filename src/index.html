@@ -19,7 +19,9 @@ import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import * as moment from 'moment';
 import * as _ from 'lodash';
+import App from './app';
 const { I18n } = require('react-i18nify');
+
 
 
 const locality = _.split( _.split(process.env.LANG, '.')[0] , '_')[0];
@@ -28,7 +30,6 @@ I18n.setLocale(locality);
 
 
 let render = () => {
-  const { App } = require('./app');
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>

@@ -10,9 +10,9 @@ export default class Theme extends React.Component<{},{}> {
       },
       containerThemeButton: {
         padding: '5rem',
-        boxShadow: '1px 1px 5px rgba(0,0,0,0.3)',
-        backgroundColor: 'rgba(0,0,0,0.23)',
-        border: '3px solid rgba(0,0,0,0.4)',
+        backgroundColor: 'rgba(0,0,0,0.1)',
+        border: '2px solid rgba(0,0,0,0.4)',
+        borderRadius: '15rem',
       },
       marginButton: {
         margin: '1rem',

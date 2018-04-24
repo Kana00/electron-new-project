@@ -72,7 +72,7 @@ class Home extends React.Component<any, HomeStateType> {
 }
 
 // send action and state to the props of component Home
-function mapStateToProps(state: any) {
+function mapStateToProps(state: combinedReducerType) {
   return { monMessage: state.rootScreenReducer.message }
 }
 function mapDispatchToProps(dispatch: any) {
@@ -81,5 +81,4 @@ function mapDispatchToProps(dispatch: any) {
     hideMessage: () => dispatch(removeMessage()),
   }
 }
-const HomeComponent = connect(mapStateToProps, mapDispatchToProps)(Home);
-export default HomeComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -4,10 +4,7 @@ const initialState: MessageStateType = {
   message: '',
 };
 
-export default function rootScreenReducer(
-  state: MessageStateType = initialState,
-  action: MessageActionType
-): MessageStateType {
+export default function rootScreenReducer( state: MessageStateType = initialState, action: MessageActionType ): MessageStateType {
   switch (action.type) {
     case ADD_MESSAGE:
         state = Object.assign({}, {message : action.message});

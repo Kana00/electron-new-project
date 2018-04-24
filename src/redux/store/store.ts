@@ -3,12 +3,14 @@ import { createStore, combineReducers } from 'redux';
 
 /* ---------- step 1 : Import all you reducer here ---------- */
 import rootScreenReducer from '../reducer/rootScreenReducer';
+import themeReducer from '../reducer/themeReducer';
 /* ---------------------------------------------------------- */
 
 /* ------------ step 2 : Combine all you reducer ------------ */
 const combinedReducer = combineReducers(
   {
     rootScreenReducer,
+    themeReducer,
   },
 );
 
