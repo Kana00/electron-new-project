@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Main from './routes/Main';
-import NoMatch from './routes/NoMatch';
-import Home from './routes/Home';
 import TitleBar from './components/TitleBar/TitleBar';
+import RouteHandler from './routes/RouteHandler';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+
 
 
 export class App extends React.Component<AppPropsType, any> {
@@ -12,14 +10,7 @@ export class App extends React.Component<AppPropsType, any> {
     return (
       <div>
         <TitleBar backgroundColor='#282C34' textColor='#BBBBBB' />
-
-        <Switch>
-          {/* subscribe all your route here */}
-          <Route exact={true} path={"/"} component={Main}/>
-          <Route exact={true} path={"/home"} component={Home}/>
-          <Route component={NoMatch}/>
-        </Switch>
-
+        <RouteHandler />
         <NavigationBar />
       </div>
     );

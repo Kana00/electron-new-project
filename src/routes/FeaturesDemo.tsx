@@ -53,11 +53,11 @@ class Home extends React.Component<any, HomeStateType> {
     return (
       <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.viewContainer}>
         <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.homeContainer}>
-          <h1>Home component</h1>
+          <h1>Features</h1>
 
-          <p>Translation exemple ⤑ {__("application.hello")} {__(1000.443)} ⤎</p>
+          <p>Translation string|number ⤑ {__("application.hello")} {__(1000.443)} ⤎</p>
 
-          <p>{this.state.timeNow}</p>
+          <p>Translation date ⤑ {this.state.timeNow} ⤎</p>
 
           <p>Redux exemple ⤑ {this.props.monMessage} ⤎</p>
           <Flexbox flexDirection='row' justifyContent='space-around' style={styles.containerButton}>

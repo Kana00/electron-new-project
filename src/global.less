@@ -48,6 +48,7 @@ html body {
 // use a default font
 html * {
   font-family: "SourceCodeRoman-ExtraLight", "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
 }
 
 input[type="button"] {
@@ -60,17 +61,17 @@ input[type="button"] {
   border: 1px solid #0074D9;
   font-size: 1rem;
   color: #0074D9;
-  background-color: #272C35;
+  background-color: rgba(39, 44, 53, 0);
   transition: 300ms;
   &:hover{
     transform: 300ms;
-    background-color: #0079e355;
+    background-color: #0079e300;
     cursor: pointer;
     transition: none;
     color: rgb(37, 152, 252);
   }
   &:active {
-    background-color: #006fcf55;
+    background-color: #006ecf00;
     transition: none;
     color: rgb(37, 152, 252);
   }
