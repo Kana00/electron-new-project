@@ -14,7 +14,6 @@ export default class DisplayReactElectron extends React.Component<{}, {}> {
         weight: '100%',
       },
       text: {
-        fontFamily: 'SourceCodeRoman-ExtraLight',
         color: '#BBBBBB',
         fontSize: 80,
         marginTop: -40,

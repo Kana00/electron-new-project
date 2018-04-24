@@ -23,7 +23,6 @@ exports[`Test component DisplayReactElectron render correctly 1`] = `
       style={
         Object {
           "color": "#BBBBBB",
-          "fontFamily": "SourceCodeRoman-ExtraLight",
           "fontSize": 80,
           "marginTop": -40,
         }

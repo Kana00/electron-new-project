@@ -1,6 +1,6 @@
 export default {
     isDevelopment: true,
-    isLiveReloading: true,
+    isLiveReloading: false,
     isShowDebugToolsStartUp: true,
     isWindowAlwaysOnTop: false,
 };
