@@ -10,7 +10,7 @@ let mainWindow: Electron.BrowserWindow | null = null;
 
 const isDevMode = process.execPath.match(/[\\/]electron/);
 
-if (environmentConfig.isLiveReloading) {
+if (environmentConfig.isLiveReloading && environmentConfig.isDevelopment) {
   enableLiveReload({strategy: 'react-hmr'});
 }
 
@@ -22,11 +22,11 @@ const createWindow = async () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   if (environmentConfig.isWindowAlwaysOnTop && environmentConfig.isDevelopment) {
-    mainWindow.setAlwaysOnTop(environmentConfig.isDevelopment);
+    mainWindow.setAlwaysOnTop(environmentConfig.isWindowAlwaysOnTop);
   }
 
   // Open the DevTools.
-  if (environmentConfig.isShowDebugToolsStartUp) {
+  if (environmentConfig.isShowDebugToolsStartUp && environmentConfig.isDevelopment) {
     await installExtension(REACT_DEVELOPER_TOOLS);
     await installExtension(REDUX_DEVTOOLS);
     mainWindow.webContents.openDevTools();
