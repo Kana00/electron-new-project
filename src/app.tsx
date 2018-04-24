@@ -1,30 +1,23 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import store from './redux/store/store';
 import TitleBar from './components/TitleBar/TitleBar';
 import RouteHandler from './routes/RouteHandler';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
 
-class App extends React.Component<AppPropsType, any> {
+export default class App extends React.Component<AppPropsType, any> {
+  constructor(props: AppPropsType) {
+    super(props);
+    this.state = store.getState().themeReducer;
+    store.subscribe(() => this.setState(store.getState().themeReducer));
+  }
   render() {
-    console.log(this.props.titleBarWindowColor);
     return (
       <div>
-        <TitleBar backgroundColor='#171B23' textColor='#BBBBBB' />
+        <TitleBar backgroundColor={this.state.titleBarWindowColor} textColor={this.state.textColor} />
         <RouteHandler />
         <NavigationBar />
       </div>
     );
   }
 }
-
-function mapStateToProps(state: combinedReducerType) {
-  return {
-    textColor: state.themeReducer.textColor,
-    backgroundColorApp: state.themeReducer.backgroundColorApp,
-    titleBarWindowColor:  state.themeReducer.titleBarWindowColor,
-    navigationBarColor: state.themeReducer.navigationBarColor,
-  }
-}
-
-export default connect(mapStateToProps)(App)
