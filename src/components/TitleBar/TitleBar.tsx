@@ -5,12 +5,12 @@ import * as electron from 'electron';
 import windowConfig from '../../config/windowConfig';
 import WindowsWindowControl from './WindowsWindowControl/WindowsWindowControl';
 
+const operatingSystem = os.type();
+const electronWindow = electron.remote.getCurrentWindow();
 
 export default class TitleBar extends React.Component<TitleBarPropsType, TitleBarStateType > {
-  private _operatingSystem: string;
   private heightOfTitleBar: string;
   private paddingInterElement: string;
-  private electronWindow: any;
   constructor(props: any) {
     super(props);
 
@@ -18,24 +18,30 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
       windowIsInFullScreen: false
     }
 
-    this._operatingSystem = os.type();
-    this.electronWindow = electron.remote.getCurrentWindow();
-    if (this._operatingSystem === 'Darwin') {
-      this.electronWindow.on('enter-full-screen', () => {
-        this.setState({ windowIsInFullScreen: true });
-      });
-      this.electronWindow.on('leave-full-screen', () => {
-        this.setState({ windowIsInFullScreen: false });
-      });
+    // Listen if the user is entering in full-screen mode
+    if (operatingSystem === 'Darwin') {
+      electronWindow.on('enter-full-screen', this.toggleMaximizeWindow.bind(this));
+      electronWindow.on('leave-full-screen', this.toggleMaximizeWindow.bind(this));
     } else {
-      this.electronWindow.on('maximize', () => {
-        this.setState({ windowIsInFullScreen: true });
-      });
-      this.electronWindow.on('unmaximize', () => {
-        this.setState({ windowIsInFullScreen: false });
-      });
+      electronWindow.on('maximize', this.toggleMaximizeWindow.bind(this));
+      electronWindow.on('unmaximize', this.toggleMaximizeWindow.bind(this));
     }
   }
+
+  componentWillUnmount() {
+    // to prevent memory leak, listener must be remove at unmounted life state
+    if (operatingSystem === 'Darwin') {
+      electronWindow.removeListener('enter-full-screen', this.toggleMaximizeWindow.bind(this));
+      electronWindow.removeListener('leave-full-screen', this.toggleMaximizeWindow.bind(this));
+    } else {
+      electronWindow.removeListener('maximize', this.toggleMaximizeWindow.bind(this));
+      electronWindow.removeListener('unmaximize', this.toggleMaximizeWindow.bind(this));
+    }
+  }
+
+  toggleMaximizeWindow() {
+    this.setState({ windowIsInFullScreen: !this.state.windowIsInFullScreen });
+  };
 
   renderTitleBarForMacOs(): JSX.Element {
     const styles = {
@@ -105,9 +111,9 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
   }
 
   render() {
-    if (this._operatingSystem === 'Darwin') {
+    if (operatingSystem === 'Darwin') {
       return this.renderTitleBarForMacOs();
-    } else if (this._operatingSystem === 'Linux' || this._operatingSystem === 'Windows_NT') {
+    } else if (operatingSystem === 'Linux' || operatingSystem === 'Windows_NT') {
       return this.renderTitleBarForWindowsAndLinux();
     } else {
       return (<div><p>No detected operating system (NavigationBar react component)</p></div>);
