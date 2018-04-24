@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Flexbox from 'flexbox-react';
 
-export default class NavigationBar extends React.Component {
+export default class NavigationBar extends React.Component<NavigationBarPropsType, any> {
   render() {
     const heightOfNavBar = 3;
     const styles = {
@@ -20,8 +20,8 @@ export default class NavigationBar extends React.Component {
         textAlign: 'center',
         lineHeight: heightOfNavBar + 'rem',
         fontSize: heightOfNavBar / 3 + 'rem',
-        backgroundColor: '#282C34',
-        color: '#BBBBBB',
+        backgroundColor: this.props.backgroundColor,
+        color: this.props.textColor,
         textDecorationLine: 'none',
       }
     };

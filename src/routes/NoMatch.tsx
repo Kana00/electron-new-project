@@ -1,19 +1,16 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import Lottie from 'react-lottie';
+import Flexbox from 'flexbox-react';
 
-export default class NoMatch extends React.Component<any, any> {
+class NoMatch extends React.Component<any, any> {
   render() {
     const styles = {
       viewContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
         height: '70vh',
       },
       title: {
-        fontWeight: '100',
-        color: '#BBBBBB',
+        color: this.props.textColor,
       },
       animationContainer: {
         marginTop: '-2rem',
@@ -23,7 +20,7 @@ export default class NoMatch extends React.Component<any, any> {
       }
     }
     return (
-      <div style={styles.viewContainer}>
+      <Flexbox flexDirection='column' justifyContent='center' alignItems='center' style={styles.viewContainer}>
         <h1 style={styles.title}>Route not defined</h1>
         <div style={styles.animationContainer}>
           <Lottie
@@ -37,7 +34,14 @@ export default class NoMatch extends React.Component<any, any> {
                 isPaused={false}
               />
         </div>
-      </div>
+      </Flexbox>
     );
   }
 }
+
+function mapStateToProps(state: combinedReducerType) {
+  return {
+    textColor: state.themeReducer.textColor
+  }
+}
+export default connect(mapStateToProps)(NoMatch);

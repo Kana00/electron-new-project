@@ -3,6 +3,7 @@ import store from './redux/store/store';
 import TitleBar from './components/TitleBar/TitleBar';
 import RouteHandler from './routes/RouteHandler';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import windowConfig from './config/windowConfig';
 
 
 export default class App extends React.Component<AppPropsType, any> {
@@ -12,11 +13,18 @@ export default class App extends React.Component<AppPropsType, any> {
     store.subscribe(() => this.setState(store.getState().themeReducer));
   }
   render() {
+    const styles = {
+      backgroundApplication: {
+        weight: '100vw',
+        height: '100vh',
+        backgroundColor: (this.state.backgroundColorApp) ? this.state.backgroundColorApp : windowConfig.backgroundColor,
+      }
+    }
     return (
-      <div>
+      <div style={styles.backgroundApplication}>
         <TitleBar backgroundColor={this.state.titleBarWindowColor} textColor={this.state.textColor} />
         <RouteHandler />
-        <NavigationBar />
+        <NavigationBar backgroundColor={this.state.titleBarWindowColor} textColor={this.state.textColor} />
       </div>
     );
   }

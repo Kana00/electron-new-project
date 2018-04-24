@@ -12,8 +12,7 @@ class Theme extends React.Component<any,{}> {
       },
       containerThemeButton: {
         padding: '5rem',
-        backgroundColor: 'rgba(0,0,0,0.1)',
-        border: '2px solid rgba(0,0,0,0.4)',
+        border: '2px solid ' + this.props.textColor,
         borderRadius: '15rem',
       },
       marginButton: {
@@ -23,16 +22,19 @@ class Theme extends React.Component<any,{}> {
     return (
       <Flexbox flexDirection='row' justifyContent='center' alignItems='center' style={styles.containerThemeRoute}>
         <div style={styles.containerThemeButton}>
-          <input type='button' value='Material Lighter' style={styles.marginButton} onClick={() => this.props.setToLightTheme()}/>
           <input type='button' value='One Dark Pro' style={styles.marginButton} onClick={() => this.props.setToDarkTheme()}/>
+          <input type='button' value='Material Lighter' style={styles.marginButton} onClick={() => this.props.setToLightTheme()}/>
         </div>
       </Flexbox>
     );
   }
 }
 
-function mapStateToProps( state: combinedReducerType) {
-
+function mapStateToProps(state: combinedReducerType) {
+  return {
+    textColor: state.themeReducer.textColor,
+    backgroundColor: state.themeReducer.backgroundColorApp,
+  }
 }
 function mapDispatchToProps(dispatch: any) {
   return {

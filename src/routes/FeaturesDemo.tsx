@@ -38,13 +38,11 @@ class Home extends React.Component<any, HomeStateType> {
       homeContainer: {
         minWidth: '50em',
         width: '50vw',
-        color: '#BBBBBB',
-        fontWeight: '100',
-        backgroundColor: '#282C34',
-        borderBottom: '5px solid #181C24',
-        borderRadius: '5px',
-        boxShadow: '3px 3px 5px 1px rgba(0, 0, 0, 0.2)',
+        color: this.props.textColor,
+        backgroundColor: this.props.backgroundColor,
+        border: '1px solid ' + this.props.textColor,
         paddingBottom: '2rem',
+        borderRadius: '1rem',
       },
       containerButton: {
         width: '20rem',
@@ -73,7 +71,11 @@ class Home extends React.Component<any, HomeStateType> {
 
 // send action and state to the props of component Home
 function mapStateToProps(state: combinedReducerType) {
-  return { monMessage: state.rootScreenReducer.message }
+  return {
+    monMessage: state.rootScreenReducer.message,
+    textColor: state.themeReducer.textColor,
+    backgroundColor: state.themeReducer.backgroundColorApp,
+  }
 }
 function mapDispatchToProps(dispatch: any) {
   return {
