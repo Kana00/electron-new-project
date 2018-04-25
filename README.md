@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-You must install yarn to have best performance
+You must install yarn to have best performance not npm
 [Yarn Download](https://yarnpkg.com/en/docs/install)
 
 After that, install [Electron-forge](https://electronforge.io/)
@@ -25,4 +25,4 @@ yarn start
 [![TypeScript](https://yt3.ggpht.com/-Z-HY_2zZwyw/AAAAAAAAAAI/AAAAAAAAAAA/qxqDsrqMTKg/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg)](http://www.typescriptlang.org/)
 [![Less](http://www.emmanuelgeorjon.com/images/2012/05/less_logo.jpg)](http://lesscss.org/)
 
-If you want to use gulp, you must to install before ts-node and run gulp
+If you want to use gulp, you must to install (in global) before ts-node and run gulp
