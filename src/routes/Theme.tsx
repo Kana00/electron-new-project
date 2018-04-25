@@ -12,8 +12,6 @@ class Theme extends React.Component<any,{}> {
       },
       containerThemeButton: {
         padding: '5rem',
-        border: '2px solid ' + this.props.textColor,
-        borderRadius: '15rem',
       },
       marginButton: {
         margin: '1rem',
@@ -23,7 +21,7 @@ class Theme extends React.Component<any,{}> {
       <Flexbox flexDirection='row' justifyContent='center' alignItems='center' style={styles.containerThemeRoute}>
         <div style={styles.containerThemeButton}>
           <input type='button' value='One Dark Pro' style={styles.marginButton} onClick={() => this.props.setToDarkTheme()}/>
-          <input type='button' value='Material Lighter' style={styles.marginButton} onClick={() => this.props.setToLightTheme()}/>
+          <input type='button' value='Solarized' style={styles.marginButton} onClick={() => this.props.setToLightTheme()}/>
         </div>
       </Flexbox>
     );

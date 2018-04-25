@@ -24,11 +24,5 @@
   "formatCodeOptions": {
     "indentSize": 2,
     "tabSize": 2
-  },
-  "exclude": [
-      "./node_modules",
-      "./src/typings",
-      "typings/browser.d.ts",
-      "typings/browser",
-    ]
+  }
 }
