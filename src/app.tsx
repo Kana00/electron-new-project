@@ -18,6 +18,7 @@ export default class App extends React.Component<AppPropsType, any> {
         weight: '100vw',
         height: '100vh',
         backgroundColor: (this.state.backgroundColorApp) ? this.state.backgroundColorApp : windowConfig.backgroundColor,
+        transition: '400ms',
       }
     }
     return (

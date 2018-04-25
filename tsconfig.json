@@ -18,10 +18,17 @@
     "moduleResolution": "node",
     "pretty": true,
     "target": "es2015",
-    "jsx": "react"
+    "jsx": "react",
+    "allowUnreachableCode": false,
   },
   "formatCodeOptions": {
     "indentSize": 2,
     "tabSize": 2
-  }
+  },
+  "exclude": [
+      "./node_modules",
+      "./src/typings",
+      "typings/browser.d.ts",
+      "typings/browser",
+    ]
 }

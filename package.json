@@ -49,12 +49,13 @@
   },
   "dependencies": {
     "@types/classnames": "^2.2.3",
-    "@types/electron-devtools-installer": "latest",
+    "@types/electron-devtools-installer": "^2.0.3",
+    "@types/gulp": "^4.0.5",
     "@types/jest": "^22.2.0",
     "@types/lodash": "^4.14.107",
     "@types/node": "^9.4.7",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react": "^16.3.2",
+    "@types/react-dom": "^16.3.2",
     "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.5",
     "classnames": "^2.2.5",
@@ -63,11 +64,12 @@
     "electron-squirrel-startup": "^1.0.0",
     "flexbox-react": "^4.4.0",
     "jest": "^22.4.2",
-    "lodash": "^4.17.5",
-    "lottie-web": "^5.1.10",
+    "lodash": "^4.17.10",
+    "lottie-web": "^5.1.13",
     "moment": "^2.22.0",
-    "react": "latest",
-    "react-dom": "latest",
+    "node": "^10.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-hot-loader": "^4.0.0",
     "react-i18nify": "^1.11.12",
     "react-lottie": "^1.1.0",
@@ -84,17 +86,20 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "electron-forge": "^5.1.1",
+    "electron-forge": "^5.2.0",
     "electron-prebuilt-compile": "1.8.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.2",
     "jest-canvas-mock": "^1.0.2",
     "react-test-renderer": "^16.3.1",
     "sinon": "^4.5.0",
-    "ts-jest": "^22.4.1",
+    "ts-jest": "^22.4.4",
+    "ts-node": "^6.0.0",
     "tslint": "^5.1.0",
     "tslint-microsoft-contrib": "^5.0.3",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.3"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -109,5 +114,6 @@
     "setupFiles": [
       "jest-canvas-mock"
     ]
-  }
+  },
+  "repository": "github:Kana00/electron-new-project"
 }
