@@ -17,5 +17,4 @@ export default {
   min_width: 800,
   min_height: 600,
   backgroundColor: '#171B23',
-  // iconPath: "./icons/png/64x64.png",
 };

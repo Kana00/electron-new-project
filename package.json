@@ -30,7 +30,9 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "yarn"
+        "packageManager": "yarn",
+        "icon": "src/assets/images/icons/mac/icon.icns",
+        "asar": true
       },
       "electronWinstallerConfig": {
         "name": "electron_new_project"
@@ -87,13 +89,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.0",
+    "electron-icon-maker": "0.0.4",
     "electron-prebuilt-compile": "1.8.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.5",
     "gulp-typescript": "^4.0.2",
     "jest-canvas-mock": "^1.0.2",
-    "png-to-ico": "^1.0.7",
     "react-test-renderer": "^16.3.1",
     "sinon": "^4.5.0",
     "ts-jest": "^22.4.4",

@@ -25,4 +25,4 @@ yarn start
 [![TypeScript](https://yt3.ggpht.com/-Z-HY_2zZwyw/AAAAAAAAAAI/AAAAAAAAAAA/qxqDsrqMTKg/s100-mo-c-c0xffffffff-rj-k-no/photo.jpg)](http://www.typescriptlang.org/)
 [![Less](http://www.emmanuelgeorjon.com/images/2012/05/less_logo.jpg)](http://lesscss.org/)
 
-If you want to use gulp, you must to install (in global) before ts-node and run gulp
+`yarn add global gulp` allow you to use gulp
