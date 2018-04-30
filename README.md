@@ -44,3 +44,18 @@ yarn start
 
 - start.ts : where Electron start and display our window.
 - app.tsx : where is stored the mount point of our react application.
+
+---
+
+## Make the app in production
+If you are on Windows, change `mac/icon.icns` to `win/icon.ico`.
+If you are on Linux, change `mac/icon.icns` to `png/icon.png`
+```JSON
+  "electronPackagerConfig": {
+    "packageManager": "yarn",
+    "icon": "src/assets/images/icons/mac/icon.icns",
+    "asar": true
+  },
+```
+
+To remove the warning where electron-compile tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.

@@ -22,7 +22,7 @@ exports[`Test component DisplayReactElectron render correctly 1`] = `
     <span
       style={
         Object {
-          "color": "#BBBBBB",
+          "color": undefined,
           "fontSize": 80,
           "marginTop": -40,
         }
