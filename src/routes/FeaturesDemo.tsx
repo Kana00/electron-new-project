@@ -6,9 +6,9 @@ import __ from "../i18n/Language";
 import * as moment from 'moment';
 
 
-class Home extends React.Component<any, HomeStateType> {
-  timerID: any;
-  constructor(props: any) {
+class Home extends React.Component<HomePropsType, HomeStateType> {
+  public timerID: any;
+  constructor(props: HomePropsType) {
     super(props);
     this.props.showMessage('message empty');
     this.state = {
@@ -77,7 +77,7 @@ function mapStateToProps(state: combinedReducerType) {
     backgroundColor: state.themeReducer.backgroundColorApp,
   }
 }
-function mapDispatchToProps(dispatch: any) {
+function mapDispatchToProps(dispatch: ActionAvailableToDispatch ) {
   return {
     showMessage: (message: string) => dispatch(addMessage(message)),
     hideMessage: () => dispatch(removeMessage()),

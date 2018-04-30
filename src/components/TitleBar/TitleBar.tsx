@@ -11,7 +11,7 @@ const electronWindow = electron.remote.getCurrentWindow();
 export default class TitleBar extends React.Component<TitleBarPropsType, TitleBarStateType > {
   private heightOfTitleBar: string;
   private paddingInterElement: string;
-  constructor(props: any) {
+  constructor(props: TitleBarPropsType) {
     super(props);
 
     this.state = {

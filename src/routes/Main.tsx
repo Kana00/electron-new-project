@@ -4,7 +4,7 @@ import DisplayReactElectron from '../components/DisplayReactElectron/DisplayReac
 import __ from '../i18n/Language';
 
 
-class Main extends React.Component<any, any> {
+class Main extends React.Component<MainPropsType> {
   render() {
     return (
       <div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Flexbox from 'flexbox-react';
 import { setLighterTheme, setDarkerTheme } from '../redux/action/themeAction';
 
-class Theme extends React.Component<any,{}> {
+class Theme extends React.Component<ThemePropsType> {
   render() {
     const styles = {
       containerThemeRoute: {
@@ -34,7 +34,7 @@ function mapStateToProps(state: combinedReducerType) {
     backgroundColor: state.themeReducer.backgroundColorApp,
   }
 }
-function mapDispatchToProps(dispatch: any) {
+function mapDispatchToProps(dispatch: ActionAvailableToDispatch) {
   return {
     setToLightTheme: () => dispatch(setLighterTheme()),
     setToDarkTheme: () => dispatch(setDarkerTheme()),

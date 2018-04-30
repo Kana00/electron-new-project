@@ -6,7 +6,7 @@ import NavigationBar from './components/NavigationBar/NavigationBar';
 import windowConfig from './config/windowConfig';
 
 
-export default class App extends React.Component<AppPropsType, any> {
+export default class App extends React.Component<AppPropsType, AppStateType> {
   constructor(props: AppPropsType) {
     super(props);
     this.state = store.getState().themeReducer;

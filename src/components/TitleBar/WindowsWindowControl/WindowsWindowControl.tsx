@@ -3,10 +3,9 @@ import * as electron from 'electron';
 import Flexbox from 'flexbox-react';
 import ButtonThemify from '../../ButtonThemify/ButtonThemify';
 
-export default class WindowsWindowControl extends React.Component<WindowsWindowControlPropsType, any> {
+export default class WindowsWindowControl extends React.Component<WindowsWindowControlPropsType, WindowsWindowControlStateType> {
   private sizePixel: number | string;
-  private isMaxSizeWindow: boolean;
-  private electronWindow: any;
+  private electronWindow: Electron.BrowserWindow;
   constructor(props: WindowsWindowControlPropsType) {
     super(props);
 

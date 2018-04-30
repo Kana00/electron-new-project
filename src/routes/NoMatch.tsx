@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Lottie from 'react-lottie';
 import Flexbox from 'flexbox-react';
 
-class NoMatch extends React.Component<any, any> {
+class NoMatch extends React.Component<NoMatchPropsType> {
   render() {
     const styles = {
       viewContainer: {

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Flexbox from 'flexbox-react';
 
-export default class NavigationBar extends React.Component<NavigationBarPropsType, any> {
+export default class NavigationBar extends React.Component<NavigationBarPropsType> {
   render() {
     const heightOfNavBar = 3;
     const styles = {

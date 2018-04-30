@@ -1,0 +1,3 @@
+interface DisplayReactPropsType {
+  textColor: string,
+}

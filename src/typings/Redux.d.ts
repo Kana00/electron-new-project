@@ -4,6 +4,8 @@ interface combinedReducerType {
   themeReducer: ThemeStateType,
 }
 
+type ActionAvailableToDispatch = (args?: any)=>object;
+
 // -------------------------- Root reducer --------------------------
 interface MessageActionType {
   readonly type: string,

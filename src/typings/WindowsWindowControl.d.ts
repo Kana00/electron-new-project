@@ -7,3 +7,10 @@ interface WindowsWindowControlPropsType {
   colorOfControl: string,
   height: string,
 }
+
+interface WindowsWindowControlStateType {
+  isMaxSizeWindow: boolean,
+  isOverMinus: boolean,
+  isOverPlus: boolean,
+  isOverClose: boolean
+};
