@@ -60,7 +60,7 @@ export default class WindowsWindowControl extends React.Component<WindowsWindowC
           (this.state.isMaxSizeWindow) ?
           <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-layers' click={() => this.maximizeWindow()}/>
           :
-          <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-plus' click={() => this.maximizeWindow()}/>
+          <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-control-stop' click={() => this.maximizeWindow()}/>
         }
         <ButtonThemify textColor={this.props.colorOfControl} codeThemify='ti-close' click={() => this.electronWindow.close()}/>
 

@@ -35,14 +35,16 @@ export default class ButtonThemify extends React.Component<ButtonThemifyPropsTyp
         WebkitAppRegion: 'no-drag',
         paddingRight: '16px',
         paddingLeft: '16px',
-        color: darkenColor(this.props.textColor, 100),
+        color: darkenColor(this.props.textColor, 30),
+        backgroundColor: 'rgba(1,1,1, 0.2)',
       }
     } else if (this.state.isOver) {
       actualStyle = {
         WebkitAppRegion: 'no-drag',
         paddingRight: '16px',
         paddingLeft: '16px',
-        color: lightenColor(this.props.textColor, 100),
+        color: lightenColor(this.props.textColor, 30),
+        backgroundColor: 'rgba(1,1,1, 0.2)',
       }
     } else {
       actualStyle = {
@@ -50,6 +52,9 @@ export default class ButtonThemify extends React.Component<ButtonThemifyPropsTyp
         paddingRight: '16px',
         paddingLeft: '16px',
       }
+    }
+    const iconOfButtonStyle = {
+      verticalAlign: 'middle'
     }
     return (
       <div
@@ -63,7 +68,7 @@ export default class ButtonThemify extends React.Component<ButtonThemifyPropsTyp
         }
         onMouseLeave={() => this.resetStyle()}
         style={actualStyle}>
-          <span className={this.props.codeThemify}></span>
+          <span style={iconOfButtonStyle} className={this.props.codeThemify}></span>
       </div>
     );
   }
