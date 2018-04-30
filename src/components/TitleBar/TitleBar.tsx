@@ -121,7 +121,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         <Flexbox style={styles.controlLeft} flexDirection='row' justifyContent='space-between' alignItems='center'>
           <div>
             <img
-              src='assets/images/icons/png/512x512.png'
+              src={this.props.source}
               height={(this.state.windowIsInFullScreen) ? heightMaximize/ratioIcon : heightMinimize/ratioIcon}
               width={(this.state.windowIsInFullScreen) ? heightMaximize/ratioIcon : heightMinimize/ratioIcon}
               style={styles.icon}/>

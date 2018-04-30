@@ -23,7 +23,10 @@ export default class App extends React.Component<AppPropsType, AppStateType> {
     }
     return (
       <div style={styles.backgroundApplication}>
-        <TitleBar backgroundColor={this.state.titleBarWindowColor} textColor={this.state.textColor} />
+        <TitleBar
+          backgroundColor={this.state.titleBarWindowColor}
+          textColor={this.state.textColor}
+          source='assets/images/icons/png/512x512.png' />
         <RouteHandler />
         <NavigationBar backgroundColor={this.state.titleBarWindowColor} textColor={this.state.textColor} />
       </div>

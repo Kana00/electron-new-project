@@ -5,6 +5,7 @@
 interface TitleBarPropsType {
   backgroundColor: string,
   textColor: string,
+  source: string,
 }
 
 interface TitleBarStateType {
