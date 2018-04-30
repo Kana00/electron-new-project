@@ -1,3 +1,5 @@
+<p align='center'><img src='https://www.zupimages.net/up/18/18/ww48.png' style='width:100%'/></p>
+
 # Installation
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -9,13 +11,14 @@ You must install yarn to have best performance (not npm)
 After that, install [Electron-forge](https://electronforge.io/) and other tools
 
 ```bash
-yarn add global electron-forge cross-env gulp
+> yarn add global electron-forge cross-env gulp
 ```
 
 Finaly, run the template and enjoy :
 
 ```bash
-yarn start
+> git clone https://github.com/Kana00/electron-new-project.git
+> yarn start
 ```
 
 
