@@ -107,18 +107,14 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         fontSize: 14,
         color: this.props.textColor,
         lineHeight: this.heightOfTitleBar,
+        paddingLeft: this.paddingInterElement,
         opacity: (this.state.windowIsInFocus)? 1 : 0.5,
       },
-      elementOnBar: {
-        paddingLeft: this.paddingInterElement,
-      }
     };
     return (
       <Flexbox flexDirection='row' justifyContent='space-between' style={styles.titleContainer}>
         <div style={styles.controlLeft}>
-          <div style={styles.elementOnBar}>
-            <span>{windowConfig.title}</span>
-          </div>
+          <span>{windowConfig.title}</span>
         </div>
         <div style={styles.controlRight}>
           <WindowsWindowControl colorOfControl={this.props.textColor} height={this.heightOfTitleBar}/>
