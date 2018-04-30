@@ -10,7 +10,7 @@ const electronWindow = electron.remote.getCurrentWindow();
 
 export default class TitleBar extends React.Component<TitleBarPropsType, TitleBarStateType > {
   private heightOfTitleBar: string;
-  private paddingInterElement: string;
+  private paddingInterElement: number;
   constructor(props: TitleBarPropsType) {
     super(props);
 
@@ -89,8 +89,12 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
   }
 
   renderTitleBarForWindowsAndLinux(): JSX.Element {
-    this.heightOfTitleBar = (this.state.windowIsInFullScreen) ? '22px' : '29px';
-    this.paddingInterElement = '10px';
+    const heightMinimize = 29;
+    const heightMaximize = 22;
+    const ratioIcon = 1.3;
+    this.heightOfTitleBar = (this.state.windowIsInFullScreen) ? heightMaximize + 'px' : heightMinimize + 'px';
+
+    this.paddingInterElement = 10;
     const styles = {
       titleContainer: {
         backgroundColor: this.props.backgroundColor,
@@ -99,24 +103,32 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         WebkitAppRegion: 'drag',
         fontWeight: '100',
       },
-      controlRight: {
-
-      },
       controlLeft: {
         fontFamily: 'SourceCodePro',
         fontSize: 14,
         color: this.props.textColor,
-        lineHeight: this.heightOfTitleBar,
-        paddingLeft: this.paddingInterElement,
+        paddingLeft: this.paddingInterElement + 'px',
         opacity: (this.state.windowIsInFocus)? 1 : 0.5,
       },
+      icon: {
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        paddingRight: (this.paddingInterElement/1.5) + 'px',
+      }
     };
     return (
       <Flexbox flexDirection='row' justifyContent='space-between' style={styles.titleContainer}>
-        <div style={styles.controlLeft}>
-          <span>{windowConfig.title}</span>
-        </div>
-        <div style={styles.controlRight}>
+        <Flexbox style={styles.controlLeft} flexDirection='row' justifyContent='space-between' alignItems='center'>
+          <div>
+            <img
+              src='assets/images/icons/png/512x512.png'
+              height={(this.state.windowIsInFullScreen) ? heightMaximize/ratioIcon : heightMinimize/ratioIcon}
+              width={(this.state.windowIsInFullScreen) ? heightMaximize/ratioIcon : heightMinimize/ratioIcon}
+              style={styles.icon}/>
+          </div>
+          <div><p>{windowConfig.title}</p></div>
+        </Flexbox>
+        <div>
           <WindowsWindowControl colorOfControl={this.props.textColor} height={this.heightOfTitleBar}/>
         </div>
       </Flexbox>
