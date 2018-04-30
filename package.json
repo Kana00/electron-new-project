@@ -5,7 +5,7 @@
   "description": "A boilerplate with electron-forge",
   "main": "src/start.ts",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "ENVIRONMENT=DEV electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
