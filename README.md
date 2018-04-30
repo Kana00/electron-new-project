@@ -26,3 +26,4 @@ yarn start
 [![Less](http://www.emmanuelgeorjon.com/images/2012/05/less_logo.jpg)](http://lesscss.org/)
 
 `yarn add global gulp` allow you to use gulp
+you need to install cross-env as global and electron-forge too
