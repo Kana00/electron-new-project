@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component NavigationBar render correctly 1`] = `
+<div
+  className="sc-bdVaJa cfPAtY"
+  style={
+    Object {
+      "bottom": 0,
+      "height": "3rem",
+      "position": "absolute",
+      "width": "100vw",
+    }
+  }
+/>
+`;

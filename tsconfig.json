@@ -1,4 +1,5 @@
 {
+  "extends": "./node_modules/tslint-microsoft-contrib/tslint.json",
   "compilerOptions": {
     "removeComments": false,
     "preserveConstEnums": true,
@@ -17,7 +18,8 @@
     "moduleResolution": "node",
     "pretty": true,
     "target": "es2015",
-    "jsx": "react"
+    "jsx": "react",
+    "allowUnreachableCode": false,
   },
   "formatCodeOptions": {
     "indentSize": 2,

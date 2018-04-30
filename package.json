@@ -5,7 +5,7 @@
   "description": "A boilerplate with electron-forge",
   "main": "src/start.ts",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "cross-env ENVIRONMENT=DEV electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -30,7 +30,9 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "yarn"
+        "packageManager": "yarn",
+        "icon": "src/assets/images/icons/mac/icon.icns",
+        "asar": true
       },
       "electronWinstallerConfig": {
         "name": "electron_new_project"
@@ -48,34 +50,60 @@
     }
   },
   "dependencies": {
-    "@types/electron-devtools-installer": "latest",
+    "@types/electron-devtools-installer": "^2.0.3",
+    "@types/gulp": "^4.0.5",
     "@types/jest": "^22.2.0",
+    "@types/lodash": "^4.14.107",
     "@types/node": "^9.4.7",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react": "^16.3.2",
+    "@types/react-dom": "^16.0.5",
     "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.5",
+    "cross-env": "^5.1.4",
     "electron-compile": "^6.4.2",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
+    "flexbox-react": "^4.4.0",
+    "global": "^4.3.2",
     "jest": "^22.4.2",
-    "react": "latest",
-    "react-dom": "latest",
+    "lodash": "^4.17.10",
+    "lottie-web": "^5.1.13",
+    "moment": "^2.22.0",
+    "node": "^10.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-hot-loader": "^4.0.0",
     "react-i18nify": "^1.11.12",
+    "react-lottie": "^1.1.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "tslib": "^1.4.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.9",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
+    "@types/react-test-renderer": "^16.0.1",
+    "@types/sinon": "^4.3.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "electron-forge": "^5.1.1",
+    "electron-forge": "^5.2.0",
+    "electron-icon-maker": "0.0.4",
     "electron-prebuilt-compile": "1.8.3",
-    "ts-jest": "^22.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.5",
+    "gulp-typescript": "^4.0.2",
+    "jest-canvas-mock": "^1.0.2",
+    "react-test-renderer": "^16.3.1",
+    "sinon": "^4.5.0",
+    "ts-jest": "^22.4.4",
+    "ts-node": "^6.0.0",
     "tslint": "^5.1.0",
-    "typescript": "~2.2.2"
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typescript": "^2.8.3"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -86,6 +114,10 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
-  }
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
+  },
+  "repository": "github:Kana00/electron-new-project"
 }

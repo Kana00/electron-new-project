@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("./assets/fonts/source-code-pro/SourceCodePro-Black.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-BlackIt.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-Bold.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-BoldIt.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-ExtraLight.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-ExtraLightIt.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-It.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-Light.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-LightIt.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-Medium.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-MediumIt.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-Regular.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-Semibold.otf") format("otf"),
+  url("./assets/fonts/source-code-pro/SourceCodePro-SemiboldIt.otf") format("otf"),
+}
+
+html body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  // remove draggale and selectable for all element
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  // when user hover a text, remove the textSelect mouse
+  &:hover {
+    cursor: default;
+  }
+  // when user click on a focus element, one outline blue is display.
+  // Remove this not expected behavior with this class
+  .removeOutLine:focus {
+    outline: 0;
+  }
+
+  .thinText {
+    font-family: 'SourceCodeRoman-ExtraLight';
+    font-weight: 100;
+  }
+
+  div {
+    outline: 0;
+  }
+}
+
+// use a default font
+html * {
+  font-family: "SourceCodeRoman-ExtraLight", "SourceCodePro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  font-weight: 100;
+}
+
+input[type="button"] {
+  -ms-progress-appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  height: 2rem;
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid #0074D9;
+  font-size: 1rem;
+  color: #0074D9;
+  background-color: rgba(39, 44, 53, 0);
+  transition: 300ms;
+  &:hover{
+    transform: 300ms;
+    background-color: #0079e300;
+    cursor: pointer;
+    transition: none;
+    color: rgb(37, 152, 252);
+  }
+  &:active {
+    background-color: #006ecf00;
+    transition: none;
+    color: rgb(37, 152, 252);
+  }
+}
