@@ -15,7 +15,8 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
     super(props);
 
     this.state = {
-      windowIsInFullScreen: false
+      windowIsInFullScreen: false,
+      windowIsInFocus: true,
     }
 
     // Listen if the user is entering in full-screen mode
@@ -26,6 +27,9 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
       electronWindow.on('maximize', this.toggleMaximizeWindow.bind(this));
       electronWindow.on('unmaximize', this.toggleMaximizeWindow.bind(this));
     }
+
+    electronWindow.on('focus', this.windowGainFocus.bind(this));
+    electronWindow.on('blur', this.windowLoseFocus.bind(this));
   }
 
   componentWillUnmount() {
@@ -37,6 +41,17 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
       electronWindow.removeListener('maximize', this.toggleMaximizeWindow.bind(this));
       electronWindow.removeListener('unmaximize', this.toggleMaximizeWindow.bind(this));
     }
+
+    electronWindow.removeListener('focus', this.windowGainFocus.bind(this));
+    electronWindow.removeListener('blur', this.windowLoseFocus.bind(this));
+  }
+
+  windowGainFocus() {
+    this.setState({windowIsInFocus: true});
+  }
+
+  windowLoseFocus() {
+    this.setState({windowIsInFocus: false});
   }
 
   toggleMaximizeWindow() {
@@ -60,6 +75,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         fontFamily: 'Helvetica',
         fontSize: 14,
         color: this.props.textColor,
+        opacity: (this.state.windowIsInFocus)? 1 : 0.5,
       }
     };
     if (!this.state.windowIsInFullScreen) {

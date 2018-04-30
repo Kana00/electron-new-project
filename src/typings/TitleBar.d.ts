@@ -9,4 +9,5 @@ interface TitleBarPropsType {
 
 interface TitleBarStateType {
   windowIsInFullScreen: boolean,
+  windowIsInFocus: boolean,
 }
