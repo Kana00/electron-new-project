@@ -3,7 +3,7 @@
 # Installation
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)
 
 You must install yarn to have best performance (not npm)
 [Yarn Download](https://yarnpkg.com/en/docs/install)
@@ -62,3 +62,8 @@ If you are on Linux, change `mac/icon.icns` to `png/icon.png`
 ```
 
 To remove the warning where electron-compile tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.
+
+---
+Note : Title bar si slightly on Windows and Linux (Below, you can see the difference).
+
+![windows title bar](https://www.zupimages.net/up/18/18/ebim.png)

@@ -1,7 +1,7 @@
 {
   "name": "electron-new-project",
   "productName": "electron-new-project",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A boilerplate with electron-forge",
   "main": "src/start.ts",
   "scripts": {
