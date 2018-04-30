@@ -107,6 +107,7 @@ export default class TitleBar extends React.Component<TitleBarPropsType, TitleBa
         fontSize: 14,
         color: this.props.textColor,
         lineHeight: this.heightOfTitleBar,
+        opacity: (this.state.windowIsInFocus)? 1 : 0.5,
       },
       elementOnBar: {
         paddingLeft: this.paddingInterElement,
