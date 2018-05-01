@@ -36,18 +36,18 @@ Finaly, run the template and enjoy :
 
 ## Folder tree
 
-+ __\_\_tests\_\___ : where are the jest unit tests.
-+ __assets__ : where are the images/fonts/animations.
-+ __components__ : where are the components of react used in this app.
-+ __config__ : files that export javascript objects. they are called in several files. this allows to have a few parameters co-ordinate.
-+ __i18n__ : where are all translation, and the function that allow you to use I18n translations.
-+ __redux__ : stores the redux store, actions and reduce. (a file `redux/action/listeAction` existe to avoid any collision of actions).
-+ __routes__ : Routes are react components that are displayed or hidden along the route. for this reason, these special components are in a special folder. We can say that these components are like screens that stores business react components.
-+ __typings__ : TypeScript provides you with variable typing. Sometimes, having a lot of typing and their javascript documentation is heavy to read. This folder stores all the variable definitions and modules of our application and imports them dynamically into all the application. Thus, our files remains legible to read.
-+ __utils__ : Contains useful functions (or class) that are not react components. simply various tools (see exemple colorTools).
++ __\_\_tests\_\___: where are the `Jest` unit tests.
++ __assets__ : where are the `images/fonts/animations`.
++ __components__: where are the components of react used in this app.
++ __config__: files that export javascript objects. they are called in several files. this allows to have a few parameters co-ordinate.
++ __i18n__: where are all translation, and the function that allow you to use I18n translations.
++ __redux__: stores the redux store, actions and reduce (a file `redux/action/listeAction` exist to avoid any collision of actions).
++ __routes__: react components that are displayed or hidden along the route. For this reason, these special components are in a special folder. We can say that these components are like screens that stores business react components.
++ __typings__: TypeScript provides you with variable typing. Sometimes, having a lot of typing and their javascript documentation is heavy to read. This folder stores all the variable definitions and modules of our application and imports them dynamically into all the application. Thus, our files remains legible to read.
++ __utils__: contains useful functions (or class) that are not react components. simply various tools (_e.g.:_ `colorTools`).
 
-- start.ts : where Electron start and display our window.
-- app.tsx : where is stored the mount point of our react application.
+- **start.ts**: where `Electron` start and display our window.
+- **app.tsx**: where is stored the mount point of our react application.
 
 ---
 
