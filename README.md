@@ -18,6 +18,7 @@ Finaly, run the template and enjoy :
 
 ```bash
 > git clone https://github.com/Kana00/electron-new-project.git
+> cd electron-new-project
 > yarn start
 ```
 
