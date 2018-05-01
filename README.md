@@ -12,16 +12,15 @@ providing an already predefined set of features for the developers.
 
 ### Installation
 
-You must install `yarn` to have best performance (not `npm`)
-[Yarn Download](https://yarnpkg.com/en/docs/install)
+You must install [yarn](https://yarnpkg.com/en/docs/install) to have best performance (not `npm`).
 
-After that, install [Electron-forge](https://electronforge.io/) and other tools
+After that, install [Electron-forge](https://electronforge.io/) and other tools:
 
 ```bash
 > yarn add global electron-forge cross-env gulp
 ```
 
-Finaly, run the template and enjoy :
+Finally, run the template and enjoy:
 
 ```bash
 > git clone https://github.com/Kana00/electron-new-project.git
