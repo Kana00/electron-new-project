@@ -65,6 +65,6 @@ If you are on Linux, change `mac/icon.icns` to `png/icon.png`
 To remove the warning where electron-compile tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.
 
 ---
-Note : Title bar si slightly on Windows and Linux (Below, you can see the difference).
+Note : Title bar si slightly different on Windows and Linux (Below, you can see the difference).
 
 ![windows title bar](https://www.zupimages.net/up/18/18/ebim.png)
