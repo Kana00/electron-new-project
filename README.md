@@ -1,20 +1,26 @@
-<p align='center'><img src='https://www.zupimages.net/up/18/18/ww48.png' style='width:100%'/></p>
-
-# Installation
+# electron-new-project
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)
 
-You must install yarn to have best performance (not npm)
-[Yarn Download](https://yarnpkg.com/en/docs/install)
+`electron-new-project` is a basic, solid template for creating a new project by
+providing an already predefined set of features for the developers.
 
-After that, install [Electron-forge](https://electronforge.io/) and other tools
+<p align='center'><img src='https://www.zupimages.net/up/18/18/ww48.png' style='width:100%'/></p>
+
+---
+
+### Installation
+
+You must install [yarn](https://yarnpkg.com/en/docs/install) to have best performance (not `npm`).
+
+After that, install [Electron-forge](https://electronforge.io/) and other tools:
 
 ```bash
 > yarn add global electron-forge cross-env gulp
 ```
 
-Finaly, run the template and enjoy :
+Finally, run the template and enjoy:
 
 ```bash
 > git clone https://github.com/Kana00/electron-new-project.git
@@ -34,26 +40,26 @@ Finaly, run the template and enjoy :
 
 ---
 
-## Folder tree
+### Folder tree
 
-+ __\_\_tests\_\___ : where are the jest unit tests.
-+ __assets__ : where are the images/fonts/animations.
-+ __components__ : where are the components of react used in this app.
-+ __config__ : files that export javascript objects. they are called in several files. this allows to have a few parameters co-ordinate.
-+ __i18n__ : where are all translation, and the function that allow you to use I18n translations.
-+ __redux__ : stores the redux store, actions and reduce. (a file `redux/action/listeAction` existe to avoid any collision of actions).
-+ __routes__ : Routes are react components that are displayed or hidden along the route. for this reason, these special components are in a special folder. We can say that these components are like screens that stores business react components.
-+ __typings__ : TypeScript provides you with variable typing. Sometimes, having a lot of typing and their javascript documentation is heavy to read. This folder stores all the variable definitions and modules of our application and imports them dynamically into all the application. Thus, our files remains legible to read.
-+ __utils__ : Contains useful functions (or class) that are not react components. simply various tools (see exemple colorTools).
++ __\_\_tests\_\___: where are the `Jest` unit tests.
++ __assets__ : where are the `images/fonts/animations`.
++ __components__: where are the components of react used in this app.
++ __config__: files that export javascript objects. they are called in several files. this allows to have a few parameters co-ordinate.
++ __i18n__: where are all translation, and the function that allow you to use I18n translations.
++ __redux__: stores the redux store, actions and reduce (a file `redux/action/listeAction` exist to avoid any collision of actions).
++ __routes__: react components that are displayed or hidden along the route. For this reason, these special components are in a special folder. We can say that these components are like screens that stores business react components.
++ __typings__: TypeScript provides you with variable typing. Sometimes, having a lot of typing and their javascript documentation is heavy to read. This folder stores all the variable definitions and modules of our application and imports them dynamically into all the application. Thus, our files remains legible to read.
++ __utils__: contains useful functions (or class) that are not react components. simply various tools (_e.g.:_ `colorTools`).
 
-- start.ts : where Electron start and display our window.
-- app.tsx : where is stored the mount point of our react application.
+- **start.ts**: where `Electron` start and display our window.
+- **app.tsx**: where is stored the mount point of our react application.
 
 ---
 
-## Make the app in production
-If you are on Windows, change `mac/icon.icns` to `win/icon.ico`.
-If you are on Linux, change `mac/icon.icns` to `png/icon.png`
+### Make the app in production
+
+As simple as that:
 ```JSON
   "electronPackagerConfig": {
     "packageManager": "yarn",
@@ -62,9 +68,20 @@ If you are on Linux, change `mac/icon.icns` to `png/icon.png`
   },
 ```
 
-To remove the warning where electron-compile tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.
+**NOTE:** If you're on Windows, change `mac/icon.icns` to `win/icon.ico`. For
+Linux users, change `mac/icon.icns` to `png/icon.png`.
+
+To remove the warning where `electron-compile` tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.
 
 ---
-Note : Title bar si slightly different on Windows and Linux (Below, you can see the difference).
+
+**Note:** the title bar is slightly different on Windows and Linux. You can see
+the difference below:
 
 ![windows title bar](https://www.zupimages.net/up/18/18/ebim.png)
+
+---
+
+### License
+
+Code is under the [MIT License](https://github.com/Kana00/electron-new-project/blob/master/LICENSE).
