@@ -75,7 +75,8 @@ To remove the warning where `electron-compile` tries to compile the definition f
 
 ---
 
-**Note:** the title bar is slightly different on Windows and Linux. Below you can see the difference:
+**Note:** the title bar is slightly different on Windows and Linux. You can see
+the difference below:
 
 ![windows title bar](https://www.zupimages.net/up/18/18/ebim.png)
 
