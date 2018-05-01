@@ -41,7 +41,7 @@ Finaly, run the template and enjoy :
 
 ---
 
-## Folder tree
+### Folder tree
 
 + __\_\_tests\_\___: where are the `Jest` unit tests.
 + __assets__ : where are the `images/fonts/animations`.
@@ -58,9 +58,9 @@ Finaly, run the template and enjoy :
 
 ---
 
-## Make the app in production
-If you are on Windows, change `mac/icon.icns` to `win/icon.ico`.
-If you are on Linux, change `mac/icon.icns` to `png/icon.png`
+### Make the app in production
+
+As simple as that:
 ```JSON
   "electronPackagerConfig": {
     "packageManager": "yarn",
@@ -68,6 +68,9 @@ If you are on Linux, change `mac/icon.icns` to `png/icon.png`
     "asar": true
   },
 ```
+
+**NOTE:** If you're on Windows, change `mac/icon.icns` to `win/icon.ico`. For
+Linux users, change `mac/icon.icns` to `png/icon.png`.
 
 To remove the warning where `electron-compile` tries to compile the definition files ".d.ts", remove them temporarily before a production compilations.
 
