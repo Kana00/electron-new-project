@@ -1,11 +1,18 @@
-<p align='center'><img src='https://www.zupimages.net/up/18/18/ww48.png' style='width:100%'/></p>
-
-# Installation
+# electron-new-project
 
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)
 
-You must install yarn to have best performance (not npm)
+`electron-new-project` is a basic, solid template for creating a new project by
+providing an already predefined set of features for the developers.
+
+<p align='center'><img src='https://www.zupimages.net/up/18/18/ww48.png' style='width:100%'/></p>
+
+---
+
+### Installation
+
+You must install `yarn` to have best performance (not `npm`)
 [Yarn Download](https://yarnpkg.com/en/docs/install)
 
 After that, install [Electron-forge](https://electronforge.io/) and other tools
