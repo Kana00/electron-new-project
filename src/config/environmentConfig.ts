@@ -1,5 +1,5 @@
 let isEnvDevelopment = false;
-if(process.env.ENVIRONMENT === 'DEV') {
+if (process.env.ENVIRONMENT === 'DEV') {
   isEnvDevelopment = true;
 }
 
