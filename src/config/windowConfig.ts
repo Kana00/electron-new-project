@@ -1,12 +1,6 @@
 import * as os from 'os';
 
-let typeOfWindow;
-// Title bar need to know if we are on mac or on an other OS
-if(os.type() === 'Darwin') {
-  typeOfWindow = 'hidden';
-} else {
-  typeOfWindow = 'default';
-}
+let typeOfWindow = (os.type() === 'Darwin') ? 'hidden' : 'default'
 
 export default {
   title: 'My new project',
